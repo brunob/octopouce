@@ -45,25 +45,3 @@ function octopouce_formulaire_verifier($flux){
 	}
 	return $flux;
 }
-
-/**
- * Insertion dans le traitement du formulaire inscription
- * 
- * Prendre en compte les extras
- * 
- * @param array $flux
- * 		Le contexte du pipeline
- * @return array $flux
- */
-function octopouce_formulaire_traiter($flux){
-	if ($flux['args']['form'] == 'inscription') {
-		/*
-		if (!intval($flux['args']['args'][0]) AND ($flux['args']['args'][1] == sql_getfetsel('id_article', 'spip_articles', 'page='.sql_quote('agenda')) AND autoriser('ecrire'))) {
-			autoriser_exception('modifier','article',$flux['args']['args'][1]);
-			evenement_modifier($flux['data']['id_evenement'],array('statut'=>'publie'));
-			autoriser_exception('modifier','article',$flux['args']['args'][1],false);
-		}
-		*/
-	}
-	return $flux;
-}
