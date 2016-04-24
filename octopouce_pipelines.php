@@ -25,7 +25,6 @@ function octopouce_pre_edition($flux){
 
 /**
  * Insertion dans le pipeline formulaire_verifier (SPIP)
- * 
  * Vérifier les extras obligatoires sur les forms inscription & profil
  * 
  * @pipeline formulaire_verifier
