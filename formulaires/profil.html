@@ -4,12 +4,7 @@
 
 <div class='formulaire_spip formulaire_profil'>
 
-	
-	[(#EDITABLE|oui)
-	]
 	<div class="cadre">
-	
-		[(#REM) pour IE qui sinon se perd dans l'ajax !, ne pas retirer]<br class='bugajaxie'>
 	
 		<form method='post' action='#ENV{action}' enctype='multipart/form-data'>
 			#ACTION_FORMULAIRE{#ENV{action}}
@@ -211,12 +206,10 @@
 				</li>
 			</ul>
 
-	
-				<p class="boutons">
-					<input type="submit" value="<:enregistrer:>">
-				</p>
+			<p class="boutons">
+				<input type="submit" value="<:enregistrer:>">
+			</p>
 		</form>
 	</div>
-
 
 </div>

@@ -4,40 +4,43 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 
 /**
  * Insertion dans le pipeline pre_edition (SPIP)
- * Ajouter le type_auteur lors de la soumission du formulaire CVT editer_auteur
- * et lors de l'update d'un auteur a l'inscription
+ * Ajouter les valeurs des extras lors de la soumission des forms inscription & profil
  *
  * @param array $flux
  * @return array
  */
 function octopouce_pre_edition($flux){
-	/*
-	if ($flux['args']['table']=='spip_auteurs') {
-		$requests = collecter_requests(array('prenom', 'famille', 'adresse'),array(),$flux['data']);
-		$flux['data'] = $requests;
+	if ($flux['args']['table'] == 'spip_auteurs') {
+		include_spip('base/octopouce');
+		$extras = octopouce_declarer_champs_extras();
+		foreach ($extras['spip_auteurs'] as $extra) {
+			$nom = $extra['options']['nom'];
+			$extra = _request($nom);
+			$flux['data'][$nom] = $extra;
+		}
 	}
-	*/
 	return $flux;
 }
 
 /**
- * Insertion dans la vérification du formulaire inscription
+ * Insertion dans le pipeline formulaire_verifier (SPIP)
  * 
- * Vérifier les extras obligatoires
+ * Vérifier les extras obligatoires sur les forms inscription & profil
  * 
  * @param array $flux
  * 		Le contexte du pipeline
  * @return array $flux
  */
 function octopouce_formulaire_verifier($flux){
-	if ($flux['args']['form'] == 'inscription') {
-		/*
-		if (!intval($flux['args']['args'][0]) AND ($flux['args']['args'][1] == sql_getfetsel('id_article', 'spip_articles', 'page='.sql_quote('agenda')) AND autoriser('ecrire'))) {
-			autoriser_exception('modifier','article',$flux['args']['args'][1]);
-			evenement_modifier($flux['data']['id_evenement'],array('statut'=>'publie'));
-			autoriser_exception('modifier','article',$flux['args']['args'][1],false);
+	if (in_array($flux['args']['form'], array('inscription','profil'))) {
+		include_spip('base/octopouce');
+		$extras = octopouce_declarer_champs_extras();
+		foreach ($extras['spip_auteurs'] as $extra) {
+			$nom = $extra['options']['nom'];
+			if (isset($extra['options']['obligatoire']) and $extra['options']['obligatoire'] and !_request($nom)) {
+				$flux['data'][$nom] = _T('info_obligatoire');
+			}
 		}
-		*/
 	}
 	return $flux;
 }
