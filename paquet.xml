@@ -1,0 +1,26 @@
+<paquet
+	prefix="octopouce"
+	categorie="squelette"
+	version="1.0.0"
+	etat="stable"
+	compatibilite="[3.0.0;3.1.*]"
+	logo="imgs/logo-auteur.png"
+	schema="1.0.0"
+>
+
+	<nom>Octopouce</nom>
+	<!-- Squelettes du projet Octopouce -->
+
+	<auteur>b_b</auteur>
+	<copyright>2016</copyright>
+	<licence>GPL v3</licence>
+	
+	<necessite nom="seenthissq" compatibilite="[1.0.4;]" />
+	<necessite nom="cextras" compatibilite="[3.7.0;]" />
+
+	<pipeline nom="declarer_champs_extras" inclure="base/octopouce.php" />
+	<pipeline nom="pre_edition" inclure="octopouce_pipelines.php" />
+	<!-- pipeline nom="formulaire_verifier" inclure="octopouce_pipelines.php" / -->
+	<!-- pipeline nom="formulaire_traiter" inclure="octopouce_pipelines.php" / -->
+
+</paquet>
