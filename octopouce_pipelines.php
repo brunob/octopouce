@@ -38,6 +38,7 @@ function octopouce_formulaire_verifier($flux){
 		foreach ($extras['spip_auteurs'] as $extra) {
 			$nom = $extra['options']['nom'];
 			if (isset($extra['options']['obligatoire']) and $extra['options']['obligatoire'] and !_request($nom)) {
+				spip_log("erreur $nom","bb");
 				$flux['data'][$nom] = _T('info_obligatoire');
 			}
 		}
