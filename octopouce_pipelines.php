@@ -6,8 +6,9 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  * Insertion dans le pipeline pre_edition (SPIP)
  * Ajouter les valeurs des extras lors de la soumission des forms inscription & profil
  *
- * @param array $flux
- * @return array
+ * @pipeline pre_edition
+ * @param array $flux Données du pipeline
+ * @return array      Données du pipeline
  */
 function octopouce_pre_edition($flux){
 	if ($flux['args']['table'] == 'spip_auteurs') {
@@ -27,9 +28,9 @@ function octopouce_pre_edition($flux){
  * 
  * Vérifier les extras obligatoires sur les forms inscription & profil
  * 
- * @param array $flux
- * 		Le contexte du pipeline
- * @return array $flux
+ * @pipeline formulaire_verifier
+ * @param array $flux Données du pipeline
+ * @return array      Données du pipeline
  */
 function octopouce_formulaire_verifier($flux){
 	if (in_array($flux['args']['form'], array('inscription','profil'))) {
