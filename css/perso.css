@@ -1,0 +1,3 @@
+.formulaire_profil ul li input.date,
+.formulaire_inscription ul li input.date { display: inline-block; position: initial; }
+.formulaire_inscription ul li input.date { width: 110px; box-sizing: border-box; }

@@ -15,32 +15,32 @@
 					<label><:entree_nom_pseudo:></label>
 					<input type="text" class="text" name="nom" value="[(#ENV**{nom})]">
 				</li>
-				#SET{name,prenom}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-				<li class='saisie_[(#GET{name})] obligatoire[ (#GET{erreurs}|oui)erreur]'>
-					<label for="#GET{name}"><:octopouce:profil_prenom:></label>
-					[<span class="erreur_message">(#GET{erreurs})</span>]
-					<input type="text" class="text" name="#GET{name}" id="#GET{name}" value="#ENV{#GET{name}}" size="30">
-				</li>
-				#SET{name,nom_famille}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-				<li class='saisie_[(#GET{name})] obligatoire[ (#GET{erreurs}|oui)erreur]'>
-					<label for="#GET{name}"><:octopouce:profil_nom_famille:></label>
-					[<span class="erreur_message">(#GET{erreurs})</span>]
-					<input type="text" class="text" name="#GET{name}" id="#GET{name}" value="#ENV{#GET{name}}" size="30">
-				</li>
-				#SET{name,adresse}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-				<li class='saisie_[(#GET{name})] obligatoire[ (#GET{erreurs}|oui)erreur]'>
-					<label for="#GET{name}"><:octopouce:profil_adresse:></label>
-					[<span class="erreur_message">(#GET{erreurs})</span>]
-					<input type="text" class="text" name="#GET{name}" id="#GET{name}" value="#ENV{#GET{name}}" size="30">
-				</li>
-				<li>
-					<label><:octopouce:profil_tel_fixe:></label>
-					<input type="text" class="text" name="tel_fixe" value="[(#ENV**{tel_fixe})]">
-				</li>
-				<li>
-					<label><:octopouce:profil_tel_portable:></label>
-					<input type="text" class="text" name="tel_portable" value="[(#ENV**{tel_portable})]">
-				</li>
+				[(#SAISIE{input,prenom,
+					label=<:octopouce:profil_prenom:>,
+					obligatoire=oui,
+					info_obligatoire="",
+					size=30})]
+				[(#SAISIE{input,nom_famille,
+					label=<:octopouce:profil_nom_famille:>,
+					obligatoire=oui,
+					info_obligatoire="",
+					size=30})]
+				[(#SAISIE{date,date_naissance,
+					label=<:octopouce:profil_date_naissance:>,
+					obligatoire=oui,
+					info_obligatoire="",
+					class="date_naissance"})]
+				[(#SAISIE{input,adresse,
+					label=<:octopouce:profil_adresse:>,
+					obligatoire=oui,
+					info_obligatoire="",
+					size=30})]
+				[(#SAISIE{input,tel_fixe,
+					label=<:octopouce:profil_tel_fixe:>,
+					size=30})]
+				[(#SAISIE{input,tel_portable,
+					label=<:octopouce:profil_tel_portable:>,
+					size=30})]
 				<li>
 					<label><:entree_biographie|replace{"\.",""}:></label>
 					<input type="text" class="text" name="bio" value="[(#ENV**{bio})]">
@@ -78,14 +78,6 @@
 					<label><:pass_nouveau_pass:></label>
 					<input type="password" class="text" name="password" value="">
 				</li>
-
-			[(#PLUGIN{OPENID}|oui)
-				<li>
-					<label>OpenID</multi></label>
-					<input type="text" class="text" name="openid" value="#ENV**{openid}">
-				</li>
-			]
-
 			</ul>
 
 

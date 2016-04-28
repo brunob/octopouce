@@ -16,8 +16,15 @@ function octopouce_pre_edition($flux){
 		$extras = octopouce_declarer_champs_extras();
 		foreach ($extras['spip_auteurs'] as $extra) {
 			$nom = $extra['options']['nom'];
-			$extra = _request($nom);
-			$flux['data'][$nom] = $extra;
+			if ($extra = _request($nom)) {
+				$flux['data'][$nom] = $extra;
+			}
+		}
+		// traitement spécifique pour les dates
+		include_spip('inc/date_gestion');
+		if (_request('date_naissance')) {
+			$erreurs = array();
+			$flux['data']['date_naissance'] = date('Y-m-d',verifier_corriger_date_saisie('naissance', false, $erreurs));
 		}
 	}
 	return $flux;
@@ -42,6 +49,27 @@ function octopouce_formulaire_verifier($flux){
 				$flux['data'][$nom] = _T('info_obligatoire');
 			}
 		}
+		// verification spécifique pour les dates
+		include_spip('inc/date_gestion');
+		if (!$flux['data']['date_naissance'] and _request('date_naissance')) {
+			$date_naissance = verifier_corriger_date_saisie('naissance', false, $flux['data']);
+		}
+	}
+	return $flux;
+}
+
+ /**
+ * Insertion dans le pipeline formulaire_fond (SPIP)
+ * Ajouter nos champs extras dans le formulaire d'inscription
+ * 
+ * @pipeline formulaire_fond
+ * @param array $flux Données du pipeline
+ * @return array      Données du pipeline
+ */
+function octopouce_formulaire_fond($flux){
+	if ($flux['args']['form'] == 'inscription') {
+		$extras = recuperer_fond('formulaires/inc-inscription', $flux['args']['contexte']);
+		$flux['data'] = preg_replace('%(<li class=["\'][^"\']*saisie_mail_inscription(.*?)</li>)%is', '$1'."\n".$extras, $flux['data']);
 	}
 	return $flux;
 }

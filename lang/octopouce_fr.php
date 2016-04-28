@@ -7,6 +7,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	'profil_adresse' => 'Adresse postale',
+	'profil_date_naissance' => 'Date de naissance',
 	'profil_nom_famille' => 'Nom',
 	'profil_prenom' => 'Prénom',
 	'profil_tel_fixe' => 'Tél. fixe',

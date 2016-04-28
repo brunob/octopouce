@@ -33,6 +33,23 @@ function octopouce_declarer_champs_extras($champs = array()) {
 		)
 	);
 
+	$champs['spip_auteurs']['date_naissance'] = array (
+		'saisie' => 'date',
+		'options' => array (
+			'nom' => 'date_naissance',
+			'label' => '<:octopouce:profil_date_naissance:>',
+			'obligatoire' => true,
+			'sql' => "date NOT NULL DEFAULT '0000-00-00'",
+			'rechercher' => false,
+		),
+		'verifier' => array (
+			'type' => 'date',
+			'options' => array (
+				'normaliser' => 'datetime',
+			),
+		)
+	);
+
 	$champs['spip_auteurs']['adresse'] = array (
 		'saisie' => 'input',
 		'options' => array (
