@@ -30,8 +30,18 @@
 					obligatoire=oui,
 					info_obligatoire="",
 					class="date_naissance"})]
-				[(#SAISIE{input,adresse,
-					label=<:octopouce:profil_adresse:>,
+				[(#SAISIE{input,adresse_voie,
+					label=<:octopouce:profil_adresse_voie:>,
+					obligatoire=oui,
+					info_obligatoire="",
+					size=30})]
+				[(#SAISIE{input,adresse_code_postal,
+					label=<:octopouce:profil_adresse_code_postal:>,
+					obligatoire=oui,
+					info_obligatoire="",
+					size=30})]
+				[(#SAISIE{input,adresse_ville,
+					label=<:octopouce:profil_adresse_ville:>,
 					obligatoire=oui,
 					info_obligatoire="",
 					size=30})]
