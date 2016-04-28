@@ -53,7 +53,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 				<strong>Nouveau sur Octopouce? Vous devriez commencer par suivre des poulpes.</strong>
 				<p>Cliquez sur le bouton « Me suggérer des contacts » ci-contre, et 
 				visitez les pages des poulpes proposés. Si un poulpe vous intéresse, suivez-le en cliquant, 
-				en haut de page, sur « Suivre ce poulpe.
+				en haut de page, sur « Suivre ce poulpe ».
 				Puis revenez sur cette page, recommencez l’opération, les propositions s’affineront au fur et
 				à mesure de votre propre sélection de poulpes.</p>
 				<p>Ce message disparaîtra lorsque vous suivrez cinq poulpes. 
