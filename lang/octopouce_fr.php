@@ -8,7 +8,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	'profil_adresse_code_postal' => 'Code postal',
 	'profil_adresse_ville' => 'Ville',
-	'profil_adresse_voie' => 'N<sup>o</sup> & voie, lieu-dit',
+	'profil_adresse_voie' => 'N° & voie, lieu-dit',
 	'profil_date_naissance' => 'Date de naissance',
 	'profil_nom_famille' => 'Nom',
 	'profil_prenom' => 'Prénom',
