@@ -1,0 +1,12 @@
+#HTTP_HEADER{Content-Type: text/plain; charset=#CHARSET}
+#CACHE{0}
+#SET{resultats, #LISTE}
+<BOUCLE_s(GEO_COMMUNES){nom LIKE (#ENV{q})%}{0,10}{par nom}{doublons}>
+[(#SET{resultats, [(#GET{resultats}|push{[(#ARRAY{label,[(#CODE_POSTAL*|textebrut|entites_html), ][(#NOM*|textebrut|entites_html)],value,[(#ID_COMMUNE)]})]})]})]
+</BOUCLE_s><BOUCLE_s1(GEO_COMMUNES){nom LIKE %(#ENV{q})%}{0,10}{par nom}{doublons}>
+[(#SET{resultats, [(#GET{resultats}|push{[(#ARRAY{label,[(#CODE_POSTAL*|textebrut|entites_html), ][(#NOM*|textebrut|entites_html)],value,[(#ID_COMMUNE)]})]})]})]
+</BOUCLE_s1><BOUCLE_s2(GEO_COMMUNES){code_postal LIKE %(#ENV{q})%}{0,20}{par nom}{doublons}>
+[(#SET{resultats, [(#GET{resultats}|push{[(#ARRAY{label,[(#CODE_POSTAL*|textebrut|entites_html), ][(#NOM*|textebrut|entites_html)],value,[(#ID_COMMUNE)]})]})]})]
+</BOUCLE_s2>
+[(#GET{resultats}|json_encode)]
+#FILTRE{trim}

@@ -18,13 +18,23 @@
 	obligatoire=oui,
 	info_obligatoire="",
 	size=30})]
-[(#SAISIE{input,adresse_code_postal,
-	label=<:octopouce:profil_adresse_code_postal:>,
-	obligatoire=oui,
-	info_obligatoire="",
-	size=30})]
-[(#SAISIE{input,adresse_ville,
+[(#SAISIE{input,ville,
 	label=<:octopouce:profil_adresse_ville:>,
-	obligatoire=oui,
-	info_obligatoire="",
-	size=30})]
+	valeur=#GET{ville},
+	attributs=data-selecteur="geo_communes" data-select-callback="ville_select"})]
+[(#SAISIE{hidden,commune,
+	obligatoire=oui})]
+<script type="text/javascript">
+	var ville_select = function(event,ui){
+		if (typeof(ui) != 'undefined' && (typeof(ui.item.value) == 'string')) {
+			$('#champ_commune').val(ui.item.value);
+			this.value = ui.item.label;
+			event.preventDefault();
+		}
+		else if (typeof(ui) != 'undefined'){
+			$('#champ_commune').val('');
+			this.value = ui.item.value;
+		}
+		return false;
+	}
+</script>

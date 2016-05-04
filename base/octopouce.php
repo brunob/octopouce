@@ -61,30 +61,6 @@ function octopouce_declarer_champs_extras($champs = array()) {
 			'traitements' => '_TRAITEMENT_TYPO',
 		)
 	);
-	
-	$champs['spip_auteurs']['adresse_code_postal'] = array (
-		'saisie' => 'input',
-		'options' => array (
-			'nom' => 'adresse_code_postal',
-			'label' => '<:octopouce:profil_adresse_code_postal:>',
-			'sql' => "text NOT NULL DEFAULT ''",
-			'rechercher' => false,
-			'obligatoire' => true,
-			'traitements' => '_TRAITEMENT_TYPO',
-		)
-	);
-	
-	$champs['spip_auteurs']['adresse_ville'] = array (
-		'saisie' => 'input',
-		'options' => array (
-			'nom' => 'adresse_ville',
-			'label' => '<:octopouce:profil_adresse_ville:>',
-			'sql' => "text NOT NULL DEFAULT ''",
-			'rechercher' => false,
-			'obligatoire' => true,
-			'traitements' => '_TRAITEMENT_TYPO',
-		)
-	);
 
 	$champs['spip_auteurs']['tel_fixe'] = array (
 		'saisie' => 'input',

@@ -20,11 +20,17 @@ function octopouce_pre_edition($flux){
 				$flux['data'][$nom] = $extra;
 			}
 		}
-		// traitement spécifique pour les dates
-		include_spip('inc/date_gestion');
+		// traitement spécifique pour les dates, normaliser celle-ci
 		if (_request('date_naissance')) {
+			include_spip('inc/date_gestion');
 			$erreurs = array();
 			$flux['data']['date_naissance'] = date('Y-m-d',verifier_corriger_date_saisie('naissance', false, $erreurs));
+		}
+		// traitement spécifique pour le champ commune, lier la commune sélectionnée à l'auteur
+		if (_request('commune')) {
+			include_spip('action/editer_liens');
+			objet_dissocier(array('geo_commune'=>'*'), array('auteur' => $flux['args']['id_objet']));
+			objet_associer(array('geo_commune' => _request('commune')), array('auteur' => $flux['args']['id_objet']));
 		}
 	}
 	return $flux;
@@ -45,14 +51,17 @@ function octopouce_formulaire_verifier($flux){
 		foreach ($extras['spip_auteurs'] as $extra) {
 			$nom = $extra['options']['nom'];
 			if (isset($extra['options']['obligatoire']) and $extra['options']['obligatoire'] and !_request($nom)) {
-				spip_log("erreur $nom","bb");
 				$flux['data'][$nom] = _T('info_obligatoire');
 			}
 		}
-		// verification spécifique pour les dates
+		// vérification spécifique pour les dates
 		include_spip('inc/date_gestion');
 		if (!$flux['data']['date_naissance'] and _request('date_naissance')) {
 			$date_naissance = verifier_corriger_date_saisie('naissance', false, $flux['data']);
+		}
+		// vérification spécifique pour le champ commune, on affiche l'erreur sur l'input autcomplete ville
+		if (!_request('commune')) {
+			$flux['data']['ville'] = _T('info_obligatoire');
 		}
 	}
 	return $flux;
