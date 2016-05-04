@@ -36,12 +36,13 @@
 					info_obligatoire="",
 					size=30})]
 
-				<BOUCLE_commune(GEO_COMMUNES geo_communes_liens){id_auteur}>[(#SET{ville,[(#CODE_POSTAL), ][(#NOM)]})]</BOUCLE_commune>
+				<BOUCLE_commune(GEO_COMMUNES geo_communes_liens){id_auteur}>[(#SET{commune,#ID_COMMUNE})][(#SET{ville,[(#CODE_POSTAL), ][(#NOM)]})]</BOUCLE_commune>
 				[(#SAISIE{input,ville,
 					label=<:octopouce:profil_adresse_ville:>,
 					valeur=#GET{ville},
 					attributs=data-selecteur="geo_communes" data-select-callback="ville_select"})]
 				[(#SAISIE{hidden,commune,
+					valeur=#GET{commune},
 					obligatoire=oui})]
 
 				[(#SAISIE{input,tel_fixe,
