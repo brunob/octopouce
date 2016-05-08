@@ -1,3 +1,16 @@
+nav#entete { z-index: 1001; }
+
+#droite > h2 { margin: 10px 15px; color: #fff; }
+
+/* page people */
+.poulpes .logo_auteur { float: left; position: relative; width: 180px; margin: 10px 20px; font-size: 0.8em; line-height: 125%; }
+.poulpes .logo_auteur a { position: relative; transition-property: color; transition-duration: 0.1s; }
+.poulpes .logo_auteur a img { float: left; margin-bottom: 0; margin-top: 0;	width: 48px; height: 48px; border-radius: 4px; transition-property: width, height; transition-duration: 0.1s; -ms-interpolation-mode: bicubic; }
+.poulpes .logo_auteur:hover a img { width: 48px; height: 48px; border: 2px solid white; margin: -2px; box-shadow: 0px 0px 10px #999; }
+.poulpes .logo_auteur .nom { font-weight: bold; }
+.poulpes .logo_auteur .nom, .login { padding-left: 60px; display: block; }
+
+/* formulaires */
 .formulaire_profil ul li input.date,
 .formulaire_inscription ul li input.date,
 .formulaire_inscription ul li input.ui-autocomplete-input { display: inline-block; position: initial; }

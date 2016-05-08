@@ -1,0 +1,91 @@
+#CACHE{0}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[(#NOM_SITE_SPIP|textebrut)] - [(#NOM|textebrut)]</title>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	[(#SESSION{id_auteur}|sinon{0}|microcache{inc/head_langue})]
+	<INCLURE{fond=inc/head}{lang=fr}>
+	<BOUCLE_couleur(AUTEURS){tout}{id_auteur=#SESSION{id_auteur}|sinon{3}}>
+	[<link rel="stylesheet" href="(#URL_PAGE{couleur,couleur=#COULEUR})" type="text/css" media="all">]
+	<style><!--
+	[(#ID_AUTEUR|microcache{noisettes/css_auteur})]
+	--></style>
+	</BOUCLE_couleur>
+
+	<INCLURE{fond=inc/head_session}>
+	
+</head>
+<body class="people plier">
+
+<INCLURE{fond=inc/entete}>
+
+<div id="principale">
+	<div>
+
+		<div id="entete_people">
+			[(#SESSION{id_auteur}|oui)
+			<div id="lien_suggerer_auteurs">
+				<a class="bouton_suggerer" onclick="$(this).hide(); $('#suggerer_auteurs').load('index.php?page=suggerer_auteurs'); return false;" href="#">•</a>
+			</div>]
+			
+			<h1><:octopouce:titre_page_people:></h1>
+			
+			[(#SESSION{id_auteur}|oui)
+			<div id="suggerer_auteurs"></div>]
+			
+			[(#INCLURE{fond=modeles/carte_gis,
+				id_map=_villes,
+				zoom_wheel=non,
+				objets=auteurs})]
+
+			<script type="text/javascript">
+			/*<![CDATA[*/
+			;(function($){
+				$(function(){
+					$('#map_villes').on('load', function(){
+						this.map.setGeoJsonFeatureIcon = function (feature, layer) {
+							var childCount = feature.properties.count;
+							var c = ' marker-cluster-';
+							if (childCount == 1) {
+								c += 'dot';
+							} else if (childCount < 5) { // 100
+								c += 'small';
+							} else if (childCount < 10) { // 1000
+								c += 'medium';
+							} else {
+								c += 'large';
+							}
+							layer.setIcon(L.divIcon({ html: '<div><span>' + ((childCount == 1) ? '' : childCount) + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) }));
+						};
+					});
+				});
+			})(jQuery);
+			/*]]>*/
+			</script>
+		</div>
+
+		<div id="centre">
+			<B_tous>
+				<div class="poulpes">
+				<BOUCLE_tous(AUTEURS){tout}{statut!=nouveau}{0,200}>
+					[(#ID_AUTEUR|microcache{noisettes/afficher_un_auteur})]
+				</BOUCLE_tous>
+				</div>
+				<div class="clear-left"></div>
+			</B_tous>
+		</div>
+
+		<aside id="droite">
+			<h2><:seenthis:auteurs_vous_suivez:></h2>
+			[(#SESSION{id_auteur}|sinon{0}|microcache{noisettes/auteur_follow_people_big})]
+		</aside>
+
+		<div class="clear-left"></div>
+	</div>
+</div>
+</body>
+</html>
+#FILTRE{mini_html}
