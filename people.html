@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>[(#NOM_SITE_SPIP|textebrut)] - [(#NOM|textebrut)]</title>
+	<title>[(#NOM_SITE_SPIP|textebrut)] - <:octopouce:titre_page_people|textebrut:></title>
 	
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -31,7 +31,8 @@
 				<a class="bouton_suggerer" onclick="$(this).hide(); $('#suggerer_auteurs').load('index.php?page=suggerer_auteurs'); return false;" href="#">•</a>
 			</div>]
 			
-			<h1><:octopouce:titre_page_people:></h1>
+			<BOUCLE_total(AUTEURS){tout}{statut!=nouveau} />#SET{total,#GRAND_TOTAL}<//B_total>
+			<h1><:octopouce:titre_page_people_nb{total=#GET{total}}:></h1>
 			
 			[(#SESSION{id_auteur}|oui)
 			<div id="suggerer_auteurs"></div>]

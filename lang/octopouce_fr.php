@@ -16,5 +16,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'profil_tel_portable' => 'Tél. portable',
 	
 	'titre_page_people' => 'Tous les poulpes',
+	'titre_page_people_nb' => 'Les @total@ poulpes',
 	
 );
