@@ -10,7 +10,8 @@ nav#entete { z-index: 1001; }
 .poulpes .logo_auteur a img { float: left; margin-bottom: 0; margin-top: 0;	width: 48px; height: 48px; border-radius: 4px; transition-property: width, height; transition-duration: 0.1s; -ms-interpolation-mode: bicubic; }
 .poulpes .logo_auteur:hover a img { width: 48px; height: 48px; border: 2px solid white; margin: -2px; box-shadow: 0px 0px 10px #999; }
 .poulpes .logo_auteur .nom { font-weight: bold; }
-.poulpes .logo_auteur .nom, .login { padding-left: 60px; display: block; }
+.poulpes .logo_auteur .nom,
+.poulpes .logo_auteur .login { padding-left: 60px; display: block; }
 
 /* formulaires */
 .formulaire_profil ul li input.date,
