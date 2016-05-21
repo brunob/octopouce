@@ -47,15 +47,6 @@
 		[(#SESSION{id_auteur}|non)<div class="centrer"><INCLURE{fond=slogan}></div>]
 
 		<div id="entete_people">
-			<ul class="parents_url">
-			<BOUCLE_parents(ME_TAGS)
-				{si #ENV*{tag}|match{^#}}
-				{tag IN (#ENV*{tag}|precurseurs)}
-				{fusion tag}
-			>
-				<li><a href="#URL_TAG">[(#TAG|mb_strtolower{UTF-8})]</a></li>
-			</BOUCLE_parents>
-			</ul>
 
 			<div class="outils">
 				<div class="suivre">
@@ -71,9 +62,9 @@
 			<div id="enfants_mots">
 				<B_enfants>
 					<ul>
-				<BOUCLE_enfants(DATA){si #ENV{tag}|match{^#}}{source tableau,#ENV{tag}|successeurs}>
-						[<li>#<a href="tag/(#VALEUR|proteger_amp|urlencode_1738_plus)">#VALEUR</a></li>]
-				</BOUCLE_enfants>
+					<BOUCLE_enfants(ME_TAGS){si #ENV{tag}|match{^#}}{tag!=#ENV{tag}}{tag==(#ENV*{tag}|substr{1}|explode{'_'}|implode{'|'})}{fusion tag}>
+						[<li>#<a href="tag/(#TAG|proteger_amp|urlencode_1738_plus)">#TAG</a></li>]
+					</BOUCLE_enfants>
 					</ul>
 				</B_enfants>
 			</div>
