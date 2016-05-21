@@ -55,8 +55,6 @@
 				<div class="rss"><a href="#URL_SITE_SPIP/#URL_TAG/feed[?follow=(#GET{follow}|replace{^(follow|all)$})]">RSS: [(#ENV{tag}|mb_strtolower{UTF-8})]</a></div>
 			</div>
 
-			<div id="[(#ENV{tag}|match{^#}|?{theme_manuellement,theme_automatiquement})]" class="theme_manu_auto"></div>
-
 			<h1>[(#ENV{tag}|mb_strtolower{UTF-8})]</h1>
 
 			<div id="enfants_mots">
