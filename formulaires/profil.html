@@ -51,12 +51,11 @@
 				[(#SAISIE{input,tel_portable,
 					label=<:octopouce:profil_tel_portable:>,
 					size=30})]
-				<li>
-					<label><:entree_biographie|replace{"\.",""}:></label>
-					<input type="text" class="text" name="bio" value="[(#ENV**{bio})]">
-				</li>
 
-
+				[(#SAISIE{textarea,bio,
+					label=<:entree_biographie|replace{"\.",""}:>,
+					class=text,
+					rows=5})]
 				<li>
 					<label><:entree_url|typo:></label>
 					<input type="text" class="text" placeholder="http://" name="url_site" value="[(#ENV**{url_site})]">
