@@ -47,17 +47,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'logout' => 'se déconnecter',
 
 	// M
-	'me_suggerer_contacts' => 'Me suggérer des contacts',
+	'me_suggerer_contacts' => 'Ne plus afficher ce message',
 	'message_inscription' => '<strong>Inscription gratuite et immédiate</strong><br />Dès l’enregistrement, votre mot de passe vous est expédié par email.',
-	'message_suggerer' => '
-				<strong>Nouveau sur Octopouce? Vous devriez commencer par suivre des poulpes.</strong>
-				<p>Cliquez sur le bouton « Me suggérer des contacts » ci-contre, et 
-				visitez les pages des poulpes proposés. Si un poulpe vous intéresse, suivez-le en cliquant, 
-				en haut de page, sur « Suivre ce poulpe ».
-				Puis revenez sur cette page, recommencez l’opération, les propositions s’affineront au fur et
-				à mesure de votre propre sélection de poulpes.</p>
-				<p>Ce message disparaîtra lorsque vous suivrez cinq poulpes. 
-				Rendez-vous ensuite  sur l’onglet « @poulpes » pour obtenir des suggestions de poulpes.</p>',
+	'message_suggerer' => '<strong>Bienvenue sur Octopouce.net, le site de covoiturage citoyen de la Presqu’île de Crozon.</strong><p>Avant de poster votre premier message, nous vous invitons à consulter l’aide.</p>',
 	'modifier' => 'modifier',
 	'montrer_messages' => 'montrer les @total@ messages',
 

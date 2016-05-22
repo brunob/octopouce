@@ -34,17 +34,15 @@
 <div id="principale">
 	<div>
 
-		<BOUCLE_test5(ME_FOLLOW){id_follow=#SESSION{id_auteur}}{4,1}>
+		<BOUCLE_test5(ME){id_auteur=#ID_AUTEUR}{0,1}>
 		</BOUCLE_test5>
 			<div id="entete_people">
 				<div id="lien_suggerer_auteurs">
-					<a class="bouton_suggerer" onclick="$(this).hide(); $('#suggerer_auteurs').load('index.php?page=suggerer_auteurs'); return false;" href="#">Me suggérer des contacts</a>
+					<a class="bouton_suggerer" onclick="$('#entete_people').hide(); return false;" href="#"><:seenthis:me_suggerer_contacts:></a>
 				</div>
-
 				<div class="auteurs_conseiller">
 					<:seenthis:message_suggerer:>
 				</div>
-				<div id="suggerer_auteurs"></div>
 			</div>
 		<//B_test5>
 
