@@ -13,6 +13,9 @@ nav#entete { z-index: 1001; }
 .poulpes .logo_auteur .nom,
 .poulpes .logo_auteur .login { padding-left: 60px; display: block; }
 
+/* page mot/tag */
+.mot #entete_people .limite_date + .carte_gis { margin-top: 10px; }
+
 /* formulaires */
 .formulaire_profil ul li input.date,
 .formulaire_inscription ul li input.date,
