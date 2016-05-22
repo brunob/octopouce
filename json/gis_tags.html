@@ -3,7 +3,7 @@
 		["geometry": (#GEOMETRY|appliquer_filtre{wkt_to_json}|sinon{{"type": "Point", "coordinates": \[#LON, #LAT\]}}),]
 		"id":"#ID_GIS",
 		"properties": {
-			"title":[(#URL_SITE_SPIP|concat{[tag/(#TITRE|substr{1}|proteger_amp|urlencode_1738_plus)]}|lien_ou_expose{#TITRE*}|json_encode)],
+			"title":[(#URL_SITE_SPIP|concat{[/(#TITRE|url_tag)]}|lien_ou_expose{#TITRE*}|json_encode)],
 			"description":[(#DESCRIPTIF|json_encode)][
 			(#LOGO_GIS|gis_icon_properties)][,
 			"styles": (#GEOMETRY_STYLES|appliquer_filtre{geometry_styles_to_json})]
