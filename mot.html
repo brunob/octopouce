@@ -66,7 +66,7 @@
 						{tag==(#ENV*{tag}|substr{1}|explode{'_'}|implode{'|'})}
 						{fusion tag}
 					>
-						[<li>#<a href="(#URL_TAG)">[(#TAG|substr{1})]</a></li>]
+						[<li>#<a href="(#URL_TAG)">[(#TAG|substr{1}|mb_strtolower{UTF-8})]</a></li>]
 					</BOUCLE_enfants>
 					</ul>
 				</B_enfants>
