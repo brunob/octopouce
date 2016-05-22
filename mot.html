@@ -82,21 +82,12 @@
 			</div>
 			]
 
-			<BOUCLE_gis(GIS){titre=#TAG}>
-			[(#TYPE|=={Point}|oui)
 			[(#INCLURE{fond=modeles/carte_gis,
-				lat=#LAT,
-				lon=#LON,
-				zoom=11,
-				objets=point_libre,
-				hauteur=250px})]
-			][(#TYPE|=={Point}|non)
-			[(#INCLURE{fond=modeles/carte_gis,
-				id_gis=#ID_GIS,
+				objets=tags,
+				titre=#ENV*{tag},
 				autocenterandzoom=oui,
 				hauteur=250px})]
-			]
-			</BOUCLE_gis>
+
 		</div>
 
 		<div id="centre">
