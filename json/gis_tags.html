@@ -1,4 +1,4 @@
-		<BOUCLE_auteurs(GIS){titre==(#ENV*{titre}|substr{1}|explode{'_'}|implode{'|'})}{","}>
+		<BOUCLE_auteurs(GIS){titre==(#ENV*{recherche}|substr{1}|explode{'_'}|implode{'|'})}{","}>
 		{"type": "Feature",
 		["geometry": (#GEOMETRY|appliquer_filtre{wkt_to_json}|sinon{{"type": "Point", "coordinates": \[#LON, #LAT\]}}),]
 		"id":"#ID_GIS",
