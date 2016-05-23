@@ -20,5 +20,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	'titre_page_people' => 'Tous les poulpes',
 	'titre_page_people_nb' => 'Les @total@ poulpes',
+	'titre_page_tags' => 'Tous les tags',
 	
 );
