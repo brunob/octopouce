@@ -103,11 +103,11 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'supprimer_veuillez_saisir' => 'Vérifiez votre login',
 
 	// T
-	'tags' => 'thèmes',
-	'theme_automatiquement' => 'Ce <b>thème</b> a été généré <b>automatiquement</b>.',
-	'theme_manuellement' => 'Ce <b>thème</b> est attribué <b>manuellement</b> par les poulpes des messages.',
-	'themes_automatiques' => 'thèmes automatiques',
-	'themes_vous_suivez' => 'Les thèmes que vous suivez',
+	'tags' => 'tags',
+	'theme_automatiquement' => 'Ce <b>tag</b> a été généré <b>automatiquement</b>.',
+	'theme_manuellement' => 'Ce <b>tag</b> est attribué <b>manuellement</b> par les poulpes des messages.',
+	'themes_automatiques' => 'tags automatiques',
+	'themes_vous_suivez' => 'Les tags que vous suivez',
 	'tous_les_messages_de' => 'Tous les messages de @people@',
 	'traduire_avec_google' => 'traduire',
 
