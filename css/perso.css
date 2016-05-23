@@ -13,6 +13,9 @@ nav#entete { z-index: 1001; }
 .poulpes .logo_auteur .nom,
 .poulpes .logo_auteur .login { padding-left: 60px; display: block; }
 
+/* page auteur */
+#entete_people .outils #contact a { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAG1BMVEX///+rq6urq6urq6urq6urq6urq6urq6urq6tt721NAAAACHRSTlMAESIzRGaI3Ym/Z2IAAAA+SURBVHgBZc4xDgAhDAPBNZDA/198yEqRE1t5Gghzn2pPaluc1oVwMgIXxkqBchl3RKQwgDGA54HW/9N+zgf1/AMlGrObswAAAABJRU5ErkJggg==); }
+
 /* page mot/tag */
 .mot #entete_people .limite_date + .carte_gis { margin-top: 10px; }
 
@@ -21,3 +24,20 @@ nav#entete { z-index: 1001; }
 .formulaire_inscription ul li input.date,
 .formulaire_inscription ul li input.ui-autocomplete-input { display: inline-block; position: initial; }
 .formulaire_inscription ul li input.date { width: 110px; box-sizing: border-box; }
+
+.formulaire_ecrire_auteur { margin-bottom: 0.5em; }
+.formulaire_ecrire_auteur legend { display: none; }
+.formulaire_ecrire_auteur label { display: block; font-size: 0.9em; padding-bottom: 4px; color: #000; }
+.formulaire_ecrire_auteur input,
+.formulaire_ecrire_auteur textarea { width: 100%; max-height: 400px; box-sizing: border-box; padding: 10px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; font-size: 1em; line-height: 1.3em; border: 1px solid #ddd; background-color: white; border-radius: 6px; }
+.formulaire_ecrire_auteur input { padding: 5px; }
+.formulaire_ecrire_auteur input:hover,
+.formulaire_ecrire_auteur textarea:hover { outline: none; border: 1px solid #bbb; }
+.formulaire_ecrire_auteur input:focus,
+.formulaire_ecrire_auteur textarea:focus { box-shadow: 0px 0px 7px #6aaacf; outline: none; border: 1px solid #6aaacf; }
+.formulaire_ecrire_auteur .boutons { margin-top: 5px; text-align: right; }
+.formulaire_ecrire_auteur .boutons input { width: auto; padding: 3px 14px; border: 0; border-radius: 4px; background-color: #666; color: white; font-size: 0.8em; }
+.formulaire_ecrire_auteur .boutons input:hover { background-color: #555; }
+.formulaire_ecrire_auteur .reponse_formulaire { margin-top: 3px; color: #000; font-size: 0.75em; font-weight: bold; }
+.formulaire_ecrire_auteur .reponse_formulaire_erreur { color: #e70606; }
+.formulaire_ecrire_auteur .previsu { margin-bottom: 1.5em; padding: 0.75em; background: #fff; }

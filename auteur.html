@@ -1,0 +1,90 @@
+#CACHE{0}
+<!DOCTYPE html>
+<html>
+<head>
+
+	[(#SESSION{id_auteur}|sinon{0}|microcache{inc/head_langue})]
+	[(#ID_AUTEUR|microcache{noisettes/head_auteur})]
+
+	<INCLURE{fond=inc/head_session}>
+
+	<script type='text/javascript'><!--
+	var auteur_page = "#ID_AUTEUR";
+	--></script>
+	
+</head>
+<body class="people plier">
+
+<INCLURE{fond=inc/entete}>
+
+<div id="principale">
+
+	<div>
+		[(#SESSION{id_auteur}|non)<div class="centrer"><INCLURE{fond=slogan}></div>]
+		[(#ID_AUTEUR|microcache{noisettes/entete_auteur})]
+		<div id="centre">
+			<BOUCLE_contact(AUTEURS){tout}{id_auteur}>
+			[<div id="tetiere">(#FORMULAIRE_ECRIRE_AUTEUR)</div>]
+			<script type="text/javascript">
+			/*<![CDATA[*/
+			;(function($){
+				$(function(){
+					$('#tetiere').hide();
+					$('#entete_people .outils .rss').after('<div class="rss" id="contact"><a href="#"><:octopouce:lien_contact:> #NOM</a></div>');
+					$('#contact').click(function(){
+						$('#tetiere').toggle();
+						return false;
+					});
+				});
+			})(jQuery);
+			/*]]>*/
+			</script>
+			</BOUCLE_contact>
+			<div id="tous_messages">
+				#SET{messages_perso, #ARRAY{}}
+				<BOUCLE_mes_messages(ME spip_me_auteur)
+					{spip_me_auteur.id_auteur=(#ID_AUTEUR|sinon{0})}
+					{id_auteur=#SESSION{id_auteur}}
+					{id_auteur!=#ID_AUTEUR}>
+						[(#ID_PARENT|>{0}|oui)
+							[(#SET{messages_perso, #GET{messages_perso}|push{#ID_PARENT}})]
+						]
+						[(#ID_PARENT|>{0}|non)
+							[(#SET{messages_perso, #GET{messages_perso}|push{#ID_ME}})]
+						]
+				</BOUCLE_mes_messages>
+
+				<B_messages>
+				<div class="onglets">
+					<a onclick="$('#messages_perso').slideDown(); $('#messages_auteur').slideUp(); return false;" href="#">Afficher vos #TOTAL_BOUCLE messages à cet auteur</a>
+				</div>
+
+				<div id="messages_perso" style="display: none;">
+					[<div class="pagination" id="pagination_haut">(#PAGINATION)</div>]
+					<ul class="messages">
+					<BOUCLE_messages(ME){id_me IN #GET{messages_perso}}{par date}{inverse}{id_parent=0}{pagination 25}{statut=publi}>
+						<li id="message#ID_ME"><a name="message#ID_ME"></a>
+							[(#ID_ME|microcache{noisettes/message/afficher_message})]
+						</li>
+					</BOUCLE_messages>
+					</ul>
+					[<div class="pagination" id="pagination_bas">(#PAGINATION)</div>]
+				</div>
+				</B_messages>
+			<INCLURE{fond=noisettes/contenu/contenu_auteur}{id=#ID_AUTEUR}{env}/>
+			</div>
+		</div>
+
+		<aside id="droite">
+			[(#SESSION{id_auteur}|non)<div id="charger_pave_inscription"></div>]
+			[(#ID_AUTEUR|microcache{noisettes/auteur_follow_people})]
+			[(#ID_AUTEUR|microcache{noisettes/auteur_followed})]
+			<INCLURE{fond=noisettes/mots_lies/mots_lies_auteur}{id_auteur}{ajaxload}>
+		</aside>
+
+		<INCLURE{fond=inc/footer}>
+	</div>
+</div>
+</body>
+</html>
+#FILTRE{mini_html}

@@ -6,6 +6,8 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
+	'lien_contact' => 'Contacter',
+	
 	'profil_adresse_code_postal' => 'Code postal',
 	'profil_adresse_ville' => 'Ville',
 	'profil_adresse_voie' => 'N° & voie, lieu-dit',
