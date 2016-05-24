@@ -64,6 +64,7 @@
 						{si #ENV{tag}|match{^#}}
 						{tag!=#ENV{tag}}
 						{tag==(#ENV*{tag}|substr{1}|explode{'_'}|implode{'|'})}
+						{class=#}
 						{fusion tag}
 					>
 						[<li>#<a href="(#URL_TAG)">[(#TAG|substr{1}|mb_strtolower{UTF-8})]</a></li>]
@@ -83,11 +84,25 @@
 			]
 
 			[(#INCLURE{fond=modeles/carte_gis,
+				id_map=_tag,
 				objets=tag,
 				recherche=#ENV*{tag},
 				zoom_wheel=non,
 				autocenterandzoom=oui,
 				hauteur=250px})]
+			<script type="text/javascript">
+			/*<![CDATA[*/
+			;(function($){
+				$(function(){
+					$('#map_tag').on('load', function(){
+						this.map.setGeoJsonFeatureIcon = function (feature, layer) {
+							layer.setIcon(L.divIcon({ html: '<div><span></span></div>', className: 'marker-cluster marker-cluster-dot', iconSize: new L.Point(40, 40) }));
+						};
+					});
+				});
+			})(jQuery);
+			/*]]>*/
+			</script>
 
 		</div>
 
