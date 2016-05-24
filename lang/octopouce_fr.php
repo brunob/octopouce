@@ -7,7 +7,6 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	'lien_contact' => 'Contacter',
-	'lien_masquer_message' => 'Ne plus afficher ce message',
 	
 	'profil_adresse_code_postal' => 'Code postal',
 	'profil_adresse_ville' => 'Ville',

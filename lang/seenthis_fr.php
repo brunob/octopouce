@@ -49,7 +49,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// M
 	'me_suggerer_contacts' => 'Me suggérer des contacts',
 	'message_inscription' => '<strong>Inscription gratuite et immédiate</strong><br />Dès l’enregistrement, votre mot de passe vous est expédié par email.',
-	'message_suggerer' => '<strong>Bienvenue sur Octopouce.net, le site de covoiturage citoyen de la Presqu’île de Crozon.</strong><p>Avant de poster votre premier message, nous vous invitons à consulter l’aide.</p>',
+	'message_suggerer' => '<strong>Bienvenue sur Octopouce.net,<br />le site de covoiturage citoyen de la Presqu’île de Crozon.</strong><p>Avant de poster votre premier message, nous vous invitons à consulter l’aide.</p><p>Ce message disparaîtra lorsque vous aurez posté 8 pouits.</p>',
 	'modifier' => 'modifier',
 	'montrer_messages' => 'montrer les @total@ messages',
 
