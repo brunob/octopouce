@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	#SET{desc,''}<BOUCLE_desc(GIS){titre==#ENV*{tag}}{0,1}>#SET{desc,#DESCRIPTIF}</BOUCLE_desc>
+	#SET{desc,''}<BOUCLE_desc(GIS){titre=#ENV*{tag}}{0,1}>#SET{desc,#DESCRIPTIF}</BOUCLE_desc>
 	<title>[(#TAG|mb_strtolower{UTF-8})][ / (#GET{desc}|textebrut)]</title>
 
 	<meta charset="#CHARSET">
