@@ -1,5 +1,5 @@
 nav#entete { z-index: 1001; }
-
+#entete_people .carte_gis { margin-top: 10px; }
 #droite > h2 { margin: 10px 15px; color: #fff; font-size: 110%; }
 
 /* page people */
@@ -16,7 +16,7 @@ nav#entete { z-index: 1001; }
 #entete_people .outils #contact a { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAG1BMVEX///+rq6urq6urq6urq6urq6urq6urq6urq6tt721NAAAACHRSTlMAESIzRGaI3Ym/Z2IAAAA+SURBVHgBZc4xDgAhDAPBNZDA/198yEqRE1t5Gghzn2pPaluc1oVwMgIXxkqBchl3RKQwgDGA54HW/9N+zgf1/AMlGrObswAAAABJRU5ErkJggg==); }
 
 /* page mot/tag */
-.mot #entete_people .limite_date + .carte_gis { margin-top: 10px; }
+
 
 /* formulaires */
 .formulaire_profil ul li input.date,
