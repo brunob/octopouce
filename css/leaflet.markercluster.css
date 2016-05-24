@@ -14,6 +14,7 @@
 }
 
 .marker-cluster div { background-color: #a4e01f; color: #fff; width: 34px; height: 34px; margin-left: 3px; margin-top: 3px; text-align: center; border: 3px solid #fff; border-radius: 20px; font: bold 11px "Helvetica Neue", Arial, Helvetica, sans-serif; }
+.marker-cluster.red div { background-color: #e0261f; }
 .marker-cluster span { line-height: 34px }
 .marker-cluster-dot div { width: 12px; height: 12px; margin-left: 10px; margin-top: 10px; border-radius: 12px; }
 .marker-cluster-small div { width: 20px; height: 20px; margin-left: 8px; margin-top: 8px; border-radius: 13px; }

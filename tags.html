@@ -28,10 +28,27 @@
 		<div id="entete_people">
 			<h1><:octopouce:titre_page_tags:></h1>
 			[(#INCLURE{fond=modeles/carte_gis,
+				id_map=_tags,
 				objets=tags,
 				zoom_wheel=non,
-				autocenterandzoom=oui,
-				hauteur=250px})]
+				autocenterandzoom=oui})]
+			<script type="text/javascript">
+			/*<![CDATA[*/
+			;(function($){
+				$(function(){
+					$('#map_tags').on('load', function(){
+						this.map.setGeoJsonFeatureIcon = function (feature, layer) {
+							var c = '';
+							if (feature.properties.styles && feature.properties.styles.color) {
+								c = ' red';
+							}
+							layer.setIcon(L.divIcon({ html: '<div><span></span></div>', className: 'marker-cluster marker-cluster-dot' + c, iconSize: new L.Point(40, 40) }));
+						};
+					});
+				});
+			})(jQuery);
+			/*]]>*/
+			</script>
 		</div>
 
 		<div id="centre">

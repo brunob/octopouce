@@ -5,6 +5,6 @@
 		"properties": {
 			"title":[(#URL_SITE_SPIP|concat{[/(#TITRE|url_tag)]}|lien_ou_expose{#TITRE*}|json_encode)],
 			"description":[(#DESCRIPTIF|json_encode)][
-			(#LOGO_GIS|gis_icon_properties)][,
-			"styles": (#GEOMETRY_STYLES|appliquer_filtre{geometry_styles_to_json})]
+			(#LOGO_GIS|gis_icon_properties)]<BOUCLE_tag(ME_TAGS){tag=#TITRE}> </BOUCLE_tag>[,
+			"styles": (#VAL{'#e0261f'}|appliquer_filtre{geometry_styles_to_json})]<//B_tag>
 		}}</BOUCLE_auteurs>
