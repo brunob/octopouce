@@ -27,5 +27,6 @@
 	<pipeline nom="pre_edition" inclure="octopouce_pipelines.php" />
 	<pipeline nom="formulaire_verifier" inclure="octopouce_pipelines.php" />
 	<pipeline nom="formulaire_fond" inclure="octopouce_pipelines.php" />
+	<pipeline nom="affichage_final" inclure="octopouce_pipelines.php" />
 
 </paquet>

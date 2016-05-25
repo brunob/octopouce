@@ -82,3 +82,19 @@ function octopouce_formulaire_fond($flux){
 	}
 	return $flux;
 }
+
+ /**
+ * Insertion dans le pipeline affichage_final (SPIP)
+ * Surcharge de js.textes_interface afin d'annuler la fonction afficher_traduire()
+ * 
+ * @pipeline affichage_final
+ * @param string $flux Données du pipeline
+ * @return string      Données du pipeline
+ */
+function octopouce_affichage_final($flux){
+	if (!$GLOBALS['html'] and strpos($flux,'afficher_traduire();') !== false) {
+		$ajout = "function afficher_traduire() { return false; }\n\n";
+		$flux = substr_replace($flux, $ajout, strpos($flux, 'afficher_traduire();'), 0);
+	}
+	return $flux;
+}
