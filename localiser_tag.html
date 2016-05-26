@@ -1,0 +1,69 @@
+#CACHE{0}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[(#TAG|mb_strtolower{UTF-8})] - <:octopouce:lien_localiser_tag|textebrut:></title>
+
+	<meta charset="#CHARSET">
+	[(#SESSION{id_auteur}|sinon{0}|microcache{inc/head_langue})]
+	<INCLURE{fond=inc/head}{lang=fr}>
+
+	[(#SET{couleur,99baad})]
+	<BOUCLE_auteur_message(AUTEURS){id_auteur=#SESSION{id_auteur}|sinon{0}}{tout}>
+		[(#SET{couleur,#COULEUR})]
+        [<link rel="stylesheet" href="(#URL_PAGE{couleur,couleur=#COULEUR})" type="text/css" media="all">]
+        <style><!--
+		[(#ID_AUTEUR|microcache{noisettes/css_auteur})]
+		--></style>
+	</BOUCLE_auteur_message>
+		[(#SET{couleur,99baad})]
+		[<link rel="stylesheet" href="(#URL_PAGE{couleur,couleur=99baad})" type="text/css" media="all">]
+		[<link rel="stylesheet" href="(#URL_PAGE{inscription,couleur=99baad})" type="text/css" media="all">]
+		<style><!--
+		.formulaire_inscription {
+			display: none;
+		}
+		--></style>
+
+	<//B_auteur_message>
+
+	<INCLURE{fond=inc/head_session}>
+
+</head>
+<body class="plier mot">
+
+<INCLURE{fond=inc/entete}>
+
+<div id="principale">
+	<div>
+		<div id="entete_people">
+			
+			<h1>[(#ENV{tag}|mb_strtolower{UTF-8})] / <:octopouce:lien_localiser_tag:></h1>
+			
+			#SET{id_gis,oui}<BOUCLE_gis(GIS){titre=#ENV*{tag}}{0,1}>#SET{id_gis,#ID_GIS}</BOUCLE_gis>
+			
+			[(#FORMULAIRE_EDITER_GIS{
+				#GET{id_gis},
+				'',
+				'',
+				#URL_TAG,
+				'oui',
+				#ARRAY{titre,#ENV*{tag}}
+			})]
+			<script type="text/javascript">
+			/*<![CDATA[*/
+			;(function($){
+				$(function(){
+					$('.formulaire_editer_gis .rechercher_adresse a').addClass('button');
+				});
+			})(jQuery);
+			/*]]>*/
+			</script>
+			
+		</div>
+	</div>
+</div>
+</body>
+</html>
+</BOUCLE_principale>
+#FILTRE{mini_html}

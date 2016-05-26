@@ -4,3 +4,14 @@ ul#messages {
 		border-bottom: 2px dashed [#(#ENV{couleur}|couleur_luminance{0.15})];
 	}
 }
+
+.button {
+	-spip-transition-property: background-color, color;
+	-spip-transition-duration: 0.1s;
+	background-color: [#(#ENV{couleur}|couleur_luminance{0.25})];
+	color: [#(#ENV{couleur}|couleur_luminance{0.9})];
+	. :hover, . :focus {
+		background-color: [#(#ENV{couleur}|couleur_luminance{0.7})];
+		color: #fff;
+	}
+}

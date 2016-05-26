@@ -76,9 +76,12 @@ function octopouce_formulaire_verifier($flux){
  * @return array      Données du pipeline
  */
 function octopouce_formulaire_fond($flux){
-	if ($flux['args']['form'] == 'inscription') {
+	if (!test_espace_prive() and $flux['args']['form'] == 'inscription') {
 		$extras = recuperer_fond('formulaires/inc-inscription', $flux['args']['contexte']);
 		$flux['data'] = preg_replace('%(<li class=["\'][^"\']*saisie_mail_inscription(.*?)</li>)%is', '$1'."\n".$extras, $flux['data']);
+	}
+	if (!test_espace_prive() and $flux['args']['form'] == 'editer_gis') {
+		$flux['data'] = recuperer_fond('formulaires/editer_gis_public', $flux['args']['contexte']);
 	}
 	return $flux;
 }
