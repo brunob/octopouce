@@ -6,7 +6,6 @@ nav#entete { z-index: 1001; }
 .button { padding: 4px 10px; background-color: #666; color: white; border: 0; border-radius: 4px; }
 .button:hover { background-color: #555; cursor: pointer; }
 
-
 /* page people */
 .poulpes h2 { padding: 0 20px; }
 .poulpes .logo_auteur { float: left; position: relative; width: 180px; margin: 10px 20px; font-size: 0.8em; line-height: 125%; }
