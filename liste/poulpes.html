@@ -1,0 +1,48 @@
+[(#SET{defaut_tri,#ARRAY{
+	statut,1,
+	nom,1,
+	nom_famille,1,
+	prenom,1,
+	date_naissance,1,
+	adresse_voie,1,
+	id_commune,1
+}})
+]<B_liste_aut>
+#SET{debut,#ENV{debutaut}}
+#ANCRE_PAGINATION
+<div class="liste-objets poulpes">
+<table class="spip liste">
+[<caption><strong class="caption">(#ENV*{titre,#GRAND_TOTAL|singulier_ou_pluriel{info_1_auteur,info_nb_auteurs}})</strong></caption>]
+	<thead>
+		[<tr><td colspan="5"><p class="pagination">(#PAGINATION{prive})</p></td></tr>]
+		<tr class="first_row">
+			<th class="statut" scope="col">[(#TRI{statut,#CHEMIN_IMAGE{auteur-16.png}|balise_img{<:lien_trier_statut|attribut_html:>},ajax})]</th>
+			<th class="nom" scope="col">[(#TRI{nom,<:info_nom:>,ajax})]</th>
+			<th class="nom_famille" scope="col">[(#TRI{nom_famille,<:octopouce:profil_nom_famille:>,ajax})]</th>
+			<th class="prenom" scope="col">[(#TRI{prenom,<:octopouce:profil_prenom:>,ajax})]</th>
+			<th class="date_naissance" scope="col">[(#TRI{date_naissance,<:octopouce:profil_date_naissance:>,ajax})]</th>
+			<th class="adresse_voie" scope="col">[(#TRI{adresse_voie,<:octopouce:profil_adresse_voie:>,ajax})]</th>
+			<th class="commune" scope="col">[(#TRI{id_commune,<:octopouce:profil_adresse_ville:>,ajax})]</th>
+			<th class="email" scope="col">[(#TRI{email,<:email:>,ajax})]</th>
+		</tr>
+	</thead>
+	<tbody>
+	<BOUCLE_liste_aut(AUTEURS geo_communes_liens){id_commune>0}{tout}{id_auteur?}{statut IN 0minirezo,1comite}{recherche?}{tri #ENV{par,nom},#GET{defaut_tri}}{pagination #ENV{nb,10} aut}>
+		[(#LANG|changer_typo)]
+		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})][ (#EXPOSE|unique)]">
+			<td class="statut">[(#STATUT|puce_statut{auteur})]</td>
+			<td class="nom[ (#NOM|non)vide]"><a href="[(#ID_AUTEUR|generer_url_entite{auteur})]"[ title="(#BIO*|couper{200}|attribut_html)"]>[(#RANG). ][(#NOM|trim|sinon{#BIO*|couper{80}|trim}|sinon{<:info_numero_abbreviation:>#ID_AUTEUR})]</a></td>
+			<td class="nom_famille">[(#NOM_FAMILLE)]</td>
+			<td class="prenom">[(#PRENOM)]</td>
+			<td class="date_naissance">[(#DATE_NAISSANCE)]</td>
+			<td class="adresse_voie">[(#ADRESSE_VOIE)]</td>
+			<td class="commune">[(#INFO_NOM{geo_communes,#ID_COMMUNE})]</td>
+			<td class="email">[<a href="mailto:(#EMAIL)">[(#EMAIL|couper{30})]</a>]</td>
+		</tr>
+	</BOUCLE_liste_aut>
+	[(#REM|changer_typo)]
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION{prive})</p>]
+</div>
+</B_liste_aut>
