@@ -40,6 +40,8 @@
 			
 			<h1>[(#ENV{tag}|mb_strtolower{UTF-8})] / <:octopouce:lien_localiser_tag:></h1>
 			
+			[(#SESSION{statut}|=={0minirezo}|sinon_interdire_acces{#URL_SITE_SPIP,401})]
+			
 			#SET{id_gis,oui}<BOUCLE_gis(GIS){titre=#ENV*{tag}}{0,1}>#SET{id_gis,#ID_GIS}</BOUCLE_gis>
 			
 			[(#FORMULAIRE_EDITER_GIS{
