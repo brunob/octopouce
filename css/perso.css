@@ -36,16 +36,16 @@ nav#entete { z-index: 1001; }
 #entete_people .formulaire_editer_gis .boutons { margin-top: 2em; text-align: center; }
 
 /* formulaires */
-.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) .editer { margin-bottom: 5px; }
-.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) label { color: #000; }
-.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) input:not(.submit),
-.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) textarea { box-sizing: border-box; padding: 10px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; font-size: 1em; line-height: 1.3em; border: 1px solid #ddd; border-radius: 6px; }
-.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) input:not(.submit) { padding: 5px; }
-.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) input:hover,
-.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) textarea:hover { outline: none; border: 1px solid #bbb; }
-.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) input:focus,
-.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) textarea:focus { box-shadow: 0px 0px 7px #6aaacf; outline: none; border: 1px solid #6aaacf; }
-.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) input.submit { padding: 3px 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; border: 0; border-radius: 6px; }
+.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche) .editer { margin-bottom: 5px; }
+.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche) label { color: #000; }
+.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche) input:not(.submit),
+.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche) textarea { box-sizing: border-box; padding: 10px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; font-size: 1em; line-height: 1.3em; border: 1px solid #ddd; border-radius: 6px; }
+.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche) input:not(.submit) { padding: 5px; }
+.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche) input:hover,
+.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche) textarea:hover { outline: none; border: 1px solid #bbb; }
+.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche) input:focus,
+.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche) textarea:focus { box-shadow: 0px 0px 7px #6aaacf; outline: none; border: 1px solid #6aaacf; }
+.formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche) input.submit { padding: 3px 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; border: 0; border-radius: 6px; }
 
 .formulaire_profil ul li input.date,
 .formulaire_inscription ul li input.date,
