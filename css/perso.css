@@ -24,7 +24,16 @@ nav#entete { z-index: 1001; }
 #entete_people .outils #editer .localiser { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAJFBMVEX///+rq6urq6v////19fXl5eXg4ODV1dXMzMzAwMC2trarq6tR5jDbAAAAA3RSTlMAM932fw+HAAAASUlEQVR4AW3OXQrAMAgDYKvd4s/97zvDZDCoD8GvoaAsrRldwj2ApKTDrSd6aaRdlXu/CL7CDk3d/OODJGrACh+CBaFMOFN/5zxvYATC1+LlGAAAAABJRU5ErkJggg==); }
 
 /* page localiser_tag */
-#entete_people .formulaire_editer_gis .rechercher_adresse a {  }
+#entete_people .formulaire_editer_gis label,
+#entete_people .formulaire_editer_gis .explication { color: #666; }
+#entete_people .formulaire_editer_gis .editer_import,
+#entete_people .formulaire_editer_gis .rechercher_adresse { display: inline-block; vertical-align: top; width: 45%; }
+#entete_people .formulaire_editer_gis .rechercher_adresse { margin-right: 3em; }
+#entete_people .formulaire_editer_gis .editer_import .explication,
+#entete_people .formulaire_editer_gis .rechercher_adresse label { display: block; margin: 0.5em 0; font-size: 1.2em; }
+#entete_people .formulaire_editer_gis .editer_import label { display: none; }
+#entete_people .formulaire_editer_gis .rechercher_adresse input { min-width: 280px; }
+#entete_people .formulaire_editer_gis .boutons { margin-top: 2em; text-align: center; }
 
 /* formulaires */
 .formulaire_spip:not(.formulaire_poster_message):not(.formulaire_incsription):not(.formulaire_recherche) .editer { margin-bottom: 5px; }
