@@ -1,6 +1,6 @@
 nav#entete { z-index: 1001; }
 #entete_people .carte_gis,
-#entete_people .formulaire_editer_gis { margin-top: 10px; }
+#entete_people .formulaire_editer_gis { margin: 10px 0; }
 #droite > h2 { margin: 10px 15px; color: #fff; font-size: 110%; }
 
 .button { padding: 4px 10px; background-color: #666; color: white; border: 0; border-radius: 4px; }
