@@ -3,7 +3,6 @@
 		"geometry": {"type": "Point", "coordinates": \[#LONGITUDE, #LATITUDE\]},
 		"id":"#ID_COMMUNE",
 		"properties": {
-			"title":[(#NOM|json_encode)],
-			"count":[(#COMPTE{id_objet}|json_encode)][
-			(#LOGO_GIS|gis_icon_properties)]
+			"title":[(#NOM|json_encode)][,
+			"count":(#COMPTE{id_objet}|json_encode)]
 		}}</BOUCLE_auteurs>
