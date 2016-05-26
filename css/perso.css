@@ -42,7 +42,7 @@ nav#entete { z-index: 1001; }
 .formulaire_inscription ul li input.ui-autocomplete-input { display: inline-block; position: initial; }
 .formulaire_inscription ul li input.date { width: 110px; box-sizing: border-box; }
 
-.formulaire_ecrire_auteur { margin-bottom: 0.5em; border: 1px solid red; }
+.formulaire_ecrire_auteur { margin-bottom: 0.5em; }
 .formulaire_ecrire_auteur legend { display: none; }
 .formulaire_ecrire_auteur label { display: block; padding-bottom: 4px; font-size: 0.9em; }
 .formulaire_ecrire_auteur input, textarea { width: 100%; max-height: 400px; }
