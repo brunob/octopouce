@@ -6,6 +6,12 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
+	'info_1_poulpe' => '1 poulpe',
+	'info_nb_poulpes' => '@nb@ poulpes',
+	
+	'label_adresse' => 'Adresse',
+	'label_inscription' => 'Inscription',
+	'label_naissance' => 'Naissance',
 	'lien_contact' => 'Contacter',
 	'lien_gestion_utilisateurs' => 'Gestion des utilisateurs',
 	'lien_localiser_tag' => 'Modifier la localisation',
