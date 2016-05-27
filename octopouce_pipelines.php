@@ -39,13 +39,14 @@ function octopouce_pre_edition($flux){
 /**
  * Insertion dans le pipeline formulaire_verifier (SPIP)
  * Vérifier les extras obligatoires sur les forms inscription & profil
+ * Imposer le statut envoyé par le formulaire editer_auteur dans le public (pas de fourberie)
  * 
  * @pipeline formulaire_verifier
  * @param array $flux Données du pipeline
  * @return array      Données du pipeline
  */
 function octopouce_formulaire_verifier($flux){
-	if (in_array($flux['args']['form'], array('inscription','profil'))) {
+	if (!test_espace_prive() and in_array($flux['args']['form'], array('inscription','profil'))) {
 		include_spip('base/octopouce');
 		$extras = octopouce_declarer_champs_extras();
 		foreach ($extras['spip_auteurs'] as $extra) {
@@ -63,6 +64,9 @@ function octopouce_formulaire_verifier($flux){
 		if (!_request('commune')) {
 			$flux['data']['ville'] = _T('info_obligatoire');
 		}
+	}
+	if (!test_espace_prive() and $flux['args']['form'] == 'editer_auteur') {
+		set_request('statut', '1comite');
 	}
 	return $flux;
 }
@@ -82,6 +86,9 @@ function octopouce_formulaire_fond($flux){
 	}
 	if (!test_espace_prive() and $flux['args']['form'] == 'editer_gis') {
 		$flux['data'] = recuperer_fond('formulaires/editer_gis_public', $flux['args']['contexte']);
+	}
+	if (!test_espace_prive() and $flux['args']['form'] == 'editer_auteur') {
+		$flux['data'] = recuperer_fond('formulaires/editer_profil', $flux['args']['contexte']);
 	}
 	return $flux;
 }

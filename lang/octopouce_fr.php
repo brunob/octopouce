@@ -26,6 +26,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'profil_tel_fixe' => 'Tél. fixe',
 	'profil_tel_portable' => 'Tél. portable',
 	
+	'titre_editer_poulpe' => 'Modifier un compte utilisateur',
+	'titre_editer_poulpe_nouveau' => 'Nouveau compte utilisateur',
 	'titre_page_people' => 'Tous les poulpes',
 	'titre_page_people_nb' => 'Les @total@ poulpes',
 	'titre_page_tags' => 'Tous les tags',

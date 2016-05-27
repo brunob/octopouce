@@ -1,0 +1,28 @@
+#CACHE{0}
+<!DOCTYPE html>
+<html>
+<head>
+	[(#SESSION{id_auteur}|sinon{0}|microcache{inc/head_langue})]
+	[(#SESSION{id_auteur}|microcache{noisettes/head_auteur})]
+	<INCLURE{fond=inc/head_session}>
+	<script type='text/javascript'><!--
+	var auteur_page = "#SESSION{id_auteur}";
+	--></script>
+</head>
+<body class="people plier">
+<INCLURE{fond=inc/entete}>
+<div id="principale">
+	<div>
+		<div id="entete_people">
+			<h1>[(#ENV{id_auteur}|intval|?{<:octopouce:titre_editer_poulpe:>,<:octopouce:titre_editer_poulpe_nouveau:>})]</h1>
+		</div>
+		[(#SESSION{statut}|=={0minirezo}|sinon_interdire_acces{#URL_SITE_SPIP,401})]
+		<BOUCLE_statut(AUTEURS){id_auteur}{tout}>
+		[(#STATUT|=={1comite}|sinon_interdire_acces{#URL_SITE_SPIP,401})]
+		</BOUCLE_statut>
+		[(#FORMULAIRE_EDITER_AUTEUR{#ENV{id_auteur},#URL_PAGE{poulpes}})]
+	</div>
+</div>
+</body>
+</html>
+#FILTRE{mini_html}

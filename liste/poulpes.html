@@ -26,6 +26,7 @@
 			<th class="commune" scope="col">[(#TRI{id_commune,<:octopouce:profil_adresse_ville:>,ajax})]</th>
 			<th class="email" scope="col">[(#TRI{email,<:email:>,ajax})]</th>
 			<th class="inscription" scope="col">[(#TRI{date_inscription,<:octopouce:label_inscription:>,ajax})]</th>
+			<th class="inscription" scope="col"></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -41,6 +42,7 @@
 			<td class="commune">[(#INFO_NOM{geo_communes,#ID_COMMUNE})]</td>
 			<td class="email">[<a href="mailto:(#EMAIL)">[(#EMAIL|couper{30})]</a>]</td>
 			<td class="inscription">[(#DATE_INSCRIPTION|affdate{Y-m-d})]</td>
+			<td class="editer">[(#STATUT|=={1comite}|oui)<a href="#URL_PAGE{editer_poulpe,id_auteur=#ID_AUTEUR}">✎</a>]</td>
 		</tr>
 	</BOUCLE_liste_aut>
 	[(#REM|changer_typo)]
