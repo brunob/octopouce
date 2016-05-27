@@ -42,8 +42,7 @@
 					valeur=#GET{ville},
 					attributs=data-selecteur="geo_communes" data-select-callback="ville_select"})]
 				[(#SAISIE{hidden,commune,
-					valeur=#GET{commune},
-					obligatoire=oui})]
+					valeur=#GET{commune}})]
 
 				[(#SAISIE{input,tel_fixe,
 					label=<:octopouce:profil_tel_fixe:>,

@@ -22,8 +22,7 @@
 	label=<:octopouce:profil_adresse_ville:>,
 	valeur=#GET{ville},
 	attributs=data-selecteur="geo_communes" data-select-callback="ville_select"})]
-[(#SAISIE{hidden,commune,
-	obligatoire=oui})]
+[(#SAISIE{hidden,commune})]
 <script type="text/javascript">
 	var ville_select = function(event,ui){
 		if (typeof(ui) != 'undefined' && (typeof(ui.item.value) == 'string')) {
