@@ -26,16 +26,12 @@
 	<div>
 
 		<div id="entete_people">
-			[(#SESSION{id_auteur}|oui)
-			<div id="lien_suggerer_auteurs">
-				<a class="bouton_suggerer" onclick="$(this).hide(); $('#suggerer_auteurs').load('index.php?page=suggerer_auteurs'); return false;" href="#">•</a>
+			[<div class="outils">(#SESSION{statut}|=={0minirezo}|oui)
+				<div class="rss" id="editer"><a class="users" href="#URL_PAGE{poulpes}"><:octopouce:lien_gestion_utilisateurs:></a></div>
 			</div>]
-			
+
 			<BOUCLE_total(AUTEURS){tout}{statut!=nouveau} />#SET{total,#GRAND_TOTAL}<//B_total>
 			<h1><:octopouce:titre_page_people_nb{total=#GET{total}}:></h1>
-			
-			[(#SESSION{id_auteur}|oui)
-			<div id="suggerer_auteurs"></div>]
 			
 			[(#INCLURE{fond=modeles/carte_gis,
 				id_map=_villes,

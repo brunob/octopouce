@@ -7,6 +7,7 @@ nav#entete { z-index: 1001; }
 .button:hover { background-color: #555; cursor: pointer; }
 
 /* page people */
+#entete_people .outils #editer .users { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAJ1BMVEX///+rq6urq6v////19fXw8PDl5eXg4ODV1dXMzMzFxcW7u7urq6tONhI0AAAAA3RSTlMAM932fw+HAAAAU0lEQVR42lXOSQ7AMAhD0QQXwuD7n7ckrVT17x7eMKbwTeYQprPzoAwSiMoEig27DFhqbCz1Blytsc+AKTbSrVPzbDBxCm74Az+IbxGysitSfu/cVCsEVn6eOWIAAAAASUVORK5CYII=); }
 .poulpes h2 { padding: 0 20px; }
 .poulpes .logo_auteur { float: left; position: relative; width: 180px; margin: 10px 20px; font-size: 0.8em; line-height: 125%; }
 .poulpes .logo_auteur a { position: relative; text-decoration: none; transition-property: color; transition-duration: 0.1s; }
