@@ -62,7 +62,7 @@
 				</li>
 
 				#SET{erreurs,#ENV**{erreurs}|table_valeur{email}}
-				<li class="editer_xxx obligatoire[ (#GET{erreurs}|oui)erreur]">
+				<li class="editer editer_email[ (#GET{erreurs}|oui)erreur]">
 					[<span class="erreur_message">(#GET{erreurs})</span>]
 					<label>Email</label>
 					<input type="text" class="text" name="email" value="[(#ENV**{email})]">
