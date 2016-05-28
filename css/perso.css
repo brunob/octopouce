@@ -39,6 +39,8 @@ nav#entete { z-index: 1001; }
 .liste-objets.poulpes { font-size: 0.85em; }
 .liste-objets.poulpes caption { margin: 0.5em 0; font-size: 1.25em; }
 .liste-objets.poulpes th a { text-decoration: none; }
+.liste-objets.poulpes .editer a { display: block; width: 16px; height: 16px; background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAJ1BMVEX///+rq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6tM+ltvAAAADHRSTlMAESIzRFVmd4i7zN37U0/GAAAAWUlEQVR42mWPwQ3AIAwDnWJoMew/b1FEAxV+RL57xQCMEcNI6VsKcPVfDPyqssblEoRpE2JLyC4m59SoEOIDby4mm0LILucQrMl5CVTnEDfp7OJ4/Rh3zH8BbXQIRlPPWxMAAAAASUVORK5CYII=) center 50% no-repeat; }
+
 
 /* formulaires */
 .formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche):not(.formulaire_profil) .editer { margin-bottom: 5px; }
