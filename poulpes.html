@@ -37,7 +37,10 @@
 <div id="principale">
 	<div>
 		<div id="entete_people">
-			
+			<div class="outils">
+				<div class="rss" id="editer"><a class="add" href="#URL_PAGE{editer_poulpe}"><:octopouce:lien_creer_utilisateur:></a></div>
+			</div>
+
 			<h1><:octopouce:lien_gestion_utilisateurs:></h1>
 			
 			[(#SESSION{statut}|=={0minirezo}|sinon_interdire_acces{#URL_SITE_SPIP,401})]

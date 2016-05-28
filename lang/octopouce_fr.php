@@ -15,6 +15,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_naissance' => 'Naissance',
 	'label_pseudo' => 'Pseudo',
 	'lien_contact' => 'Contacter',
+	'lien_creer_utilisateur' => 'Créer un compte utilisateur',
 	'lien_gestion_utilisateurs' => 'Gestion des utilisateurs',
 	'lien_localiser_tag' => 'Modifier la localisation',
 	

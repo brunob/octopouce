@@ -36,6 +36,7 @@ nav#entete { z-index: 1001; }
 #entete_people .formulaire_editer_gis .boutons { margin-top: 2em; text-align: center; }
 
 /*page poulpes */
+#entete_people .outils #editer .add { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAJ1BMVEX///+rq6urq6v////19fXw8PDl5eXg4ODV1dXMzMy7u7u2trarq6vFvi0VAAAAA3RSTlMAM932fw+HAAAAT0lEQVR42lXOUQ7AIAgDULSzVPT+5x1zbtn6QXhJE7BS504tlvsryxEHtHTBAYwHSsyhhRCpHlgA0FwOyWYg42wgN8B+1zozHkx8j/7eOQGCDQTO1ichpgAAAABJRU5ErkJggg==); }
 .liste-objets.poulpes { font-size: 0.85em; }
 .liste-objets.poulpes caption { margin: 0.5em 0; font-size: 1.25em; }
 .liste-objets.poulpes th a { text-decoration: none; }

@@ -71,6 +71,21 @@ function octopouce_formulaire_verifier($flux){
 	return $flux;
 }
 
+/**
+ * Insertion dans le pipeline formulaire_traiter (SPIP)
+ * Supprimer le paramètre id_auteur de l'url lors du retour du formulaire editer_auteur dans le public
+ * 
+ * @pipeline formulaire_traiter
+ * @param array $flux Données du pipeline
+ * @return array      Données du pipeline
+ */
+function octopouce_formulaire_traiter($flux){
+	if (!test_espace_prive() and $flux['args']['form'] == 'editer_auteur') {
+		$flux['data']['redirect'] = $flux['args']['args'][1];
+	}
+	return $flux;
+}
+
  /**
  * Insertion dans le pipeline formulaire_fond (SPIP)
  * Ajouter nos champs extras dans le formulaire d'inscription
