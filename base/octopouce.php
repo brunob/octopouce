@@ -17,6 +17,7 @@ function octopouce_declarer_champs_extras($champs = array()) {
 			'sql' => "text NOT NULL DEFAULT ''",
 			'rechercher' => false,
 			'obligatoire' => true,
+			'versionner' => true,
 			'traitements' => '_TRAITEMENT_TYPO',
 		)
 	);
@@ -29,6 +30,7 @@ function octopouce_declarer_champs_extras($champs = array()) {
 			'sql' => "text NOT NULL DEFAULT ''",
 			'rechercher' => false,
 			'obligatoire' => true,
+			'versionner' => true,
 			'traitements' => '_TRAITEMENT_TYPO',
 		)
 	);
@@ -41,6 +43,7 @@ function octopouce_declarer_champs_extras($champs = array()) {
 			'obligatoire' => true,
 			'sql' => "date NOT NULL DEFAULT '0000-00-00'",
 			'rechercher' => false,
+			'versionner' => true,
 		),
 		'verifier' => array (
 			'type' => 'date',
@@ -58,6 +61,7 @@ function octopouce_declarer_champs_extras($champs = array()) {
 			'sql' => "text NOT NULL DEFAULT ''",
 			'rechercher' => false,
 			'obligatoire' => true,
+			'versionner' => true,
 			'traitements' => '_TRAITEMENT_TYPO',
 		)
 	);
@@ -69,6 +73,7 @@ function octopouce_declarer_champs_extras($champs = array()) {
 			'label' => '<:octopouce:profil_tel_fixe:>',
 			'sql' => "text NOT NULL DEFAULT ''",
 			'rechercher' => false,
+			'versionner' => true,
 		)
 	);
 
@@ -79,6 +84,7 @@ function octopouce_declarer_champs_extras($champs = array()) {
 			'label' => '<:octopouce:profil_tel_portable:>',
 			'sql' => "text NOT NULL DEFAULT ''",
 			'rechercher' => false,
+			'versionner' => true,
 		)
 	);
 

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><:octopouce:lien_gestion_utilisateurs|textebrut:></title>
+	<title><:octopouce:lien_suivi_revisions|textebrut:></title>
 
 	<meta charset="#CHARSET">
 	[(#SESSION{id_auteur}|sinon{0}|microcache{inc/head_langue})]
@@ -39,18 +39,15 @@
 		<div id="entete_people">
 			<div class="outils">
 				<div class="rss editer">
-					<a class="add" href="#URL_PAGE{editer_poulpe}"><:octopouce:lien_creer_utilisateur:></a>
-				</div>
-				<div class="rss editer">
-					<a class="revisions" href="#URL_PAGE{revisions}"><:octopouce:lien_suivi_revisions:></a>
+					<div class="rss editer"><a class="users" href="#URL_PAGE{poulpes}"><:octopouce:lien_gestion_utilisateurs:></a></div>
 				</div>
 			</div>
 
-			<h1><:octopouce:lien_gestion_utilisateurs:></h1>
+			<h1><:octopouce:lien_suivi_revisions:></h1>
 			
 			[(#SESSION{statut}|=={0minirezo}|sinon_interdire_acces{#URL_SITE_SPIP,401})]
 
-			[(#INCLURE{fond=liste/poulpes,
+			[(#INCLURE{fond=liste/versions,
 				nb=30,
 				env,
 				ajax})]

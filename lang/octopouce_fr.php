@@ -18,6 +18,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'lien_creer_utilisateur' => 'Créer un compte utilisateur',
 	'lien_gestion_utilisateurs' => 'Gestion des utilisateurs',
 	'lien_localiser_tag' => 'Modifier la localisation',
+	'lien_suivi_revisions' => 'Suivi des modifications',
 	
 	'profil_adresse_code_postal' => 'Code postal',
 	'profil_adresse_ville' => 'Ville',
