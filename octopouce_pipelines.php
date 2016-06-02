@@ -64,6 +64,10 @@ function octopouce_formulaire_verifier($flux){
 		if (!_request('commune')) {
 			$flux['data']['ville'] = _T('info_obligatoire');
 		}
+		// vérification spécifique pour la checkbox de la charte lors de l'inscription
+		if ($flux['args']['form'] == 'inscription' and !_request('cgu')) {
+			$flux['data']['cgu'] = _T('info_obligatoire');
+		}
 	}
 	if (!test_espace_prive() and $flux['args']['form'] == 'editer_auteur') {
 		set_request('statut', '1comite');

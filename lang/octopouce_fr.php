@@ -10,6 +10,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'info_nb_poulpes' => '@nb@ poulpes',
 	
 	'label_adresse' => 'Adresse',
+	'label_cgu' => 'J\'accepte <a href="@url@">la charte du réseau</a>',
 	'label_editer' => 'Modifier',
 	'label_inscription' => 'Inscription',
 	'label_naissance' => 'Naissance',

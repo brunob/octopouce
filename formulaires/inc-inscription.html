@@ -23,6 +23,9 @@
 	valeur=#GET{ville},
 	attributs=data-selecteur="geo_communes" data-select-callback="ville_select"})]
 [(#SAISIE{hidden,commune})]
+<BOUCLE_art(ARTICLES){id_article=#CONFIG{octopouce/article_charte,2}}>
+[(#SAISIE{case,cgu,label_case=<:octopouce:label_cgu{url=#URL_ARTICLE}:>})]
+</BOUCLE_art>
 <script type="text/javascript">
 	var ville_select = function(event,ui){
 		if (typeof(ui) != 'undefined' && (typeof(ui.item.value) == 'string')) {
