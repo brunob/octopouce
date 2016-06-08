@@ -127,3 +127,30 @@ function octopouce_affichage_final($flux){
 	}
 	return $flux;
 }
+
+ /**
+ * Insertion dans le pipeline seenthis_notifierme_destinataires (Plugin seenthis)
+ * Ajouter aux destinataires des notifications les personnes qui suivent les tags présents dans le post
+ * 
+ * @pipeline seenthis_notifierme_destinataires
+ * @param array $flux Données du pipeline
+ * @return array      Données du pipeline
+ */
+function octopouce_seenthis_notifierme_destinataires($flux){
+	$texte = texte_de_me($flux['args']['id_me']);
+
+	// auteurs abonnés aux tags cités dans le message ;
+	include_spip('inc/traiter_texte');
+	$t = preg_replace("/"._REG_URL."/ui", "", $texte);
+	if (preg_match_all("/"._REG_HASH."/ui", $t, $tags)) {
+		foreach(array_unique(array_values($tags[0])) as $tag) {
+			$tag = implode('|', explode('_', substr($tag, 1)));
+			$query_follow = sql_select("id_follow", "spip_me_follow_tag", "tag REGEXP '$tag'");
+			while ($row_follow = sql_fetch($query_follow)) {
+				$flux['data'][] = $row_follow['id_follow'];
+			}
+		}
+	}
+
+	return $flux;
+}

@@ -29,5 +29,6 @@
 	<pipeline nom="formulaire_traiter" inclure="octopouce_pipelines.php" />
 	<pipeline nom="formulaire_fond" inclure="octopouce_pipelines.php" />
 	<pipeline nom="affichage_final" inclure="octopouce_pipelines.php" />
+	<pipeline nom="seenthis_notifierme_destinataires" inclure="octopouce_pipelines.php" />
 
 </paquet>
