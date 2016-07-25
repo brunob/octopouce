@@ -58,6 +58,15 @@
 							layer.setIcon(L.divIcon({ html: '<div><span>' + ((childCount == 1) ? '' : childCount) + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) }));
 						};
 					});
+					$('.poulpes .logo_auteur').tooltipster({
+						trigger: 'hover',
+						content: null,
+						theme: 'tooltipster-shadow',
+						functionInit: function(origin, content) {
+							if($(origin).next('.bio').html())
+								return $(origin).next('.bio');
+						}
+					});
 				});
 			})(jQuery);
 			/*]]>*/
@@ -69,6 +78,7 @@
 				<div class="poulpes">
 				<BOUCLE_tous(AUTEURS){tout}{statut!=nouveau}{par nom}>
 					[(#ID_AUTEUR|microcache{noisettes/afficher_un_auteur})]
+					[<div class="bio">(#BIO)</div>]
 				</BOUCLE_tous>
 				</div>
 				<div class="clear-left"></div>
