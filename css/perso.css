@@ -1,4 +1,9 @@
 nav#entete { z-index: 1001; }
+@media all and (max-width: 500px) {
+	nav#entete .seenthis { margin-left: 5px; }
+	nav#entete.rechercher div.liens { margin-left: 2px; margin-right: 2px; }
+	nav#entete.rechercher .formulaire_recherche form input.text { width: 80px; }
+}
 #entete_people .carte_gis,
 #entete_people .formulaire_editer_gis { margin: 10px 0; }
 #droite > h2 { margin: 10px 15px; color: #fff; font-size: 110%; }
