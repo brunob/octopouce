@@ -1,0 +1,15 @@
+<B_tous>
+	[<div class="cartouche poulpes">
+		[<a href="[(#URL_PAGE{people}|parametre_url{id_commune,''})]" class="ajax filtre_reset" title="<:octopouce:label_afficher_tout|attribut_html:>">(#CHEMIN{imgs/bouton-nofollow-gris.png}|balise_img)</a>]
+		<h2>(#INFO_NOM{geo_communes,#ENV{id_commune}}) [((#GRAND_TOTAL|singulier_ou_pluriel{octopouce:info_1_poulpe,octopouce:info_nb_poulpes}))]</h2>
+	</div>]
+	[<div class="pagination" id="pagination_haut">(#PAGINATION)</div>]
+	<div class="poulpes">
+	<BOUCLE_tous(AUTEURS geo_communes_liens){tout}{statut!=nouveau}{par nom}{id_commune?}{pagination 24}>
+		[(#ID_AUTEUR|microcache{noisettes/afficher_un_auteur})]
+		[<div class="bio">(#BIO)</div>]
+	</BOUCLE_tous>
+	</div>
+	<div class="clear-left"></div>
+	[<div class="pagination" id="pagination_bas">(#PAGINATION)</div>]
+</B_tous>

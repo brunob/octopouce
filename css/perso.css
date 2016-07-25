@@ -8,7 +8,8 @@ nav#entete { z-index: 1001; }
 
 /* page people */
 #entete_people .outils .rss.editer .users { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAJ1BMVEX///+rq6urq6v////19fXw8PDl5eXg4ODV1dXMzMzFxcW7u7urq6tONhI0AAAAA3RSTlMAM932fw+HAAAAU0lEQVR42lXOSQ7AMAhD0QQXwuD7n7ckrVT17x7eMKbwTeYQprPzoAwSiMoEig27DFhqbCz1Blytsc+AKTbSrVPzbDBxCm74Az+IbxGysitSfu/cVCsEVn6eOWIAAAAASUVORK5CYII=); }
-.poulpes h2 { padding: 0 20px; }
+.poulpes.cartouche h2 { padding: 0 20px; font-size: 110%; }
+.poulpes.cartouche .filtre_reset { float: right; margin-right: 20px; }
 .poulpes .logo_auteur { float: left; position: relative; width: 180px; margin: 10px 20px; font-size: 0.8em; line-height: 125%; }
 .poulpes .logo_auteur a { position: relative; text-decoration: none; transition-property: color; transition-duration: 0.1s; }
 .poulpes .logo_auteur a img { float: left; margin-bottom: 0; margin-top: 0;	width: 48px; height: 48px; border-radius: 4px; transition-property: width, height; transition-duration: 0.1s; -ms-interpolation-mode: bicubic; }

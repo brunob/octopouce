@@ -57,6 +57,9 @@
 							}
 							layer.setIcon(L.divIcon({ html: '<div><span>' + ((childCount == 1) ? '' : childCount) + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) }));
 						};
+						this.map.on('popupopen', function(e) {
+							ajaxReload('centre', {args: {id_commune: e.popup._source.feature.id, debut_tous: 0}, history: true});
+						});
 					});
 					$('.poulpes .logo_auteur').tooltipster({
 						trigger: 'hover',
@@ -74,15 +77,7 @@
 		</div>
 
 		<div id="centre">
-			<B_tous>
-				<div class="poulpes">
-				<BOUCLE_tous(AUTEURS){tout}{statut!=nouveau}{par nom}>
-					[(#ID_AUTEUR|microcache{noisettes/afficher_un_auteur})]
-					[<div class="bio">(#BIO)</div>]
-				</BOUCLE_tous>
-				</div>
-				<div class="clear-left"></div>
-			</B_tous>
+			<INCLURE{fond=noisettes/contenu/contenu_page_people,ajax=centre,env} />
 		</div>
 
 		<aside id="droite">
