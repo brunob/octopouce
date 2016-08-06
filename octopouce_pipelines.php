@@ -114,7 +114,7 @@ function octopouce_formulaire_traiter($flux){
 function octopouce_formulaire_fond($flux){
 	if (!test_espace_prive() and $flux['args']['form'] == 'inscription') {
 		$extras = recuperer_fond('formulaires/inc-inscription', $flux['args']['contexte']);
-		$flux['data'] = preg_replace('%(<li class=["\'][^"\']*saisie_mail_inscription(.*?)</li>)%is', '$1'."\n".$extras, $flux['data']);
+		$flux['data'] = preg_replace('%(<div class=["\'][^"\']*saisie_mail_inscription(.*?)</div>)%is', '$1'."\n".$extras, $flux['data']);
 	}
 	if (!test_espace_prive() and $flux['args']['form'] == 'editer_gis') {
 		$flux['data'] = recuperer_fond('formulaires/editer_gis_public', $flux['args']['contexte']);
