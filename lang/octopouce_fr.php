@@ -13,6 +13,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_adresse' => 'Adresse',
 	'label_cgu' => 'J\'accepte <a href="@url@">la charte du réseau</a>',
 	'label_editer' => 'Modifier',
+	'label_encarter' => 'Imprimer la carte de membre',
 	'label_inscription' => 'Inscription',
 	'label_naissance' => 'Naissance',
 	'label_pseudo' => 'Pseudo',

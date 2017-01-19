@@ -44,6 +44,7 @@ nav#entete { z-index: 1001; }
 .liste-objets caption { margin: 0.5em 0; font-size: 1.25em; }
 .liste-objets.poulpes th a { text-decoration: none; }
 .liste-objets.poulpes .editer a { display: block; width: 16px; height: 16px; background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAJ1BMVEX///+rq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6tM+ltvAAAADHRSTlMAESIzRFVmd4i7zN37U0/GAAAAWUlEQVR42mWPwQ3AIAwDnWJoMew/b1FEAxV+RL57xQCMEcNI6VsKcPVfDPyqssblEoRpE2JLyC4m59SoEOIDby4mm0LILucQrMl5CVTnEDfp7OJ4/Rh3zH8BbXQIRlPPWxMAAAAASUVORK5CYII=) center 50% no-repeat; }
+.liste-objets.poulpes .editer.carte a { background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAKlBMVEX///+rq6urq6urq6urq6v////19fXq6urg4ODV1dXMzMy7u7u2trarq6sOOfnkAAAABXRSTlMAESJEZiHD6qkAAABaSURBVHgBZY+FAQAhCAAx6f3H/X7zTBoAIKRGgIvsAxkg+kSAdN1aEbHqrUivgq+rlEWhpE0ht8JZfgUV5AtE+RRYPrgpXo+m0D+H/UkNH+xPOpK21rfhtvFP0NoJE5QPPF0AAAAASUVORK5CYII=) center 50% no-repeat; }
 
 /* page revisions */
 .liste-objets.versions .none { display: none; }

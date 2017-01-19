@@ -23,10 +23,11 @@
 			<th class="prenom" scope="col">[(#TRI{prenom,<:octopouce:profil_prenom:>,ajax})]</th>
 			<th class="date_naissance" scope="col">[(#TRI{date_naissance,<:octopouce:label_naissance:>,ajax})]</th>
 			<th class="adresse_voie" scope="col">[(#TRI{adresse_voie,<:octopouce:label_adresse:>,ajax})]</th>
-			<th class="commune" scope="col">[(#TRI{id_commune,<:octopouce:profil_adresse_ville:>,ajax})]</th>
+			<!-- <th class="commune" scope="col">[(#TRI{id_commune,<:octopouce:profil_adresse_ville:>,ajax})]</th> -->
 			<th class="email" scope="col">[(#TRI{email,<:email:>,ajax})]</th>
 			<th class="inscription" scope="col">[(#TRI{date_inscription,<:octopouce:label_inscription:>,ajax})]</th>
-			<th class="inscription" scope="col"></th>
+			<th class="editer" scope="col"></th>
+			<th class="editer carte" scope="col"></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -38,11 +39,12 @@
 			<td class="nom_famille">[(#NOM_FAMILLE)]</td>
 			<td class="prenom">[(#PRENOM)]</td>
 			<td class="date_naissance">[(#DATE_NAISSANCE)]</td>
-			<td class="adresse_voie">[(#ADRESSE_VOIE)]</td>
+			<!-- <td class="adresse_voie">[(#ADRESSE_VOIE)]</td> -->
 			<td class="commune">[(#INFO_NOM{geo_communes,#ID_COMMUNE})]</td>
 			<td class="email">[<a href="mailto:(#EMAIL)">[(#EMAIL|couper{30})]</a>]</td>
 			<td class="inscription">[(#DATE_INSCRIPTION|affdate{Y-m-d})]</td>
 			<td class="editer">[(#STATUT|=={1comite}|oui)<a href="#URL_PAGE{editer_poulpe,id_auteur=#ID_AUTEUR}" title="<:octopouce:label_editer|attribut_html:>"></a>]</td>
+			<td class="editer carte"><a href="#URL_PAGE{carte_membre,id_auteur=#ID_AUTEUR}" title="<:octopouce:label_encarter|attribut_html:>"></a></td>
 		</tr>
 	</BOUCLE_liste_aut>
 	[(#REM|changer_typo)]
