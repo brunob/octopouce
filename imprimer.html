@@ -12,10 +12,10 @@
 }
 body { width: 100%; margin: 0; padding: 0; font-family: abel, sans-serif; }
 .quoi { text-align: center; }
-[(#ENV{quoi}|=={lettre}|oui)
-svg { border: 1px solid #ddd; }
-]
-.spip_documents { display: none; }
+.lettre { padding: 1em; }
+.lettre h1 { margin-top: 0; }
+.lettre svg { border: 1px solid #ddd; }
+.lettre .spip_documents { display: none; }
 @media print {
    @page { margin: 0cm; }
    img { max-width: 100% !important; }
