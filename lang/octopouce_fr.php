@@ -27,6 +27,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'lien_imprimer_lettre' => 'Lettre d\'adhésion',
 	'lien_localiser_tag' => 'Modifier la localisation',
 	'lien_suivi_revisions' => 'Suivi des modifications',
+	'lien_supprimer_message' => 'Supprimer ce message',
 	
 	'profil_adresse_code_postal' => 'Code postal',
 	'profil_adresse_ville' => 'Ville',

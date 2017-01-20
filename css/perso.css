@@ -5,6 +5,11 @@ nav#entete { z-index: 1001; }
 
 .button { padding: 4px 10px; background-color: #666; color: white; border: 0; border-radius: 4px; }
 .button:hover { background-color: #555; cursor: pointer; }
+#droite .actions { margin: 2em 0; text-align: center; }
+
+/* page message */
+.message #droite .button.delete { background-color: #ff4136; color: #fff; text-decoration: none; }
+.message #droite .button.delete:hover { background-color: red; }
 
 /* page people */
 #entete_people .outils .rss.editer .users { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAJ1BMVEX///+rq6urq6v////19fXw8PDl5eXg4ODV1dXMzMzFxcW7u7urq6tONhI0AAAAA3RSTlMAM932fw+HAAAAU0lEQVR42lXOSQ7AMAhD0QQXwuD7n7ckrVT17x7eMKbwTeYQprPzoAwSiMoEig27DFhqbCz1Blytsc+AKTbSrVPzbDBxCm74Az+IbxGysitSfu/cVCsEVn6eOWIAAAAASUVORK5CYII=); }
