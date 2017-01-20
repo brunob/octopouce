@@ -3,9 +3,15 @@
 <html lang="fr">
 <head>
 <style>
-body { width: 100%; margin: 0; padding: 0; font-family: Abel, sans-serif; }
+@font-face {
+	font-family: 'abel';
+	src: url('#CHEMIN{css/fonts/abel-regular.woff2}') format('woff2'),
+		 url('#CHEMIN{css/fonts/abel-regular.woff}') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+body { width: 100%; margin: 0; padding: 0; font-family: abel, sans-serif; }
 @media print {
-   /* @import url('https://fonts.googleapis.com/css?family=Abel'); */
    @page { margin: 0cm; }
    img { max-width: 100% !important; }
 }
@@ -71,8 +77,8 @@ body { width: 100%; margin: 0; padding: 0; font-family: Abel, sans-serif; }
 	 inkscape:groupmode="layer"
 	 inkscape:label="Carte">
 	<image
-	   sodipodi:absref="[(#URL_AUTEUR|qrcode|extraire_attribut{src})]"
-	   xlink:href="[(#URL_AUTEUR|qrcode|extraire_attribut{src})]"
+	   sodipodi:absref="[(#URL_AUTEUR|url_absolue|qrcode|extraire_attribut{src})]"
+	   xlink:href="[(#URL_AUTEUR|url_absolue|qrcode|extraire_attribut{src})]"
 	   y="966.47235"
 	   x="225.56987"
 	   id="image3021"
