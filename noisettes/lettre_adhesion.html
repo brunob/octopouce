@@ -1,0 +1,8 @@
+<BOUCLE_art(ARTICLES){page=adhesion}>
+<h1>#TITRE</h1>
+#TEXTE
+</BOUCLE_art>
+<p><:octopouce:explication_carte_membre:></p>
+<INCLURE{fond=noisettes/carte_membre,id_auteur} />
+#SET{date,#DATE|affdate{d/m/Y}}
+<p><:octopouce:lettre_adhesion_mention{date=#GET{date}}:></p>

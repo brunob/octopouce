@@ -44,7 +44,7 @@
 			<td class="email">[<a href="mailto:(#EMAIL)">[(#EMAIL|couper{30})]</a>]</td>
 			<td class="inscription">[(#DATE_INSCRIPTION|affdate{Y-m-d})]</td>
 			<td class="editer">[(#STATUT|=={1comite}|oui)<a href="#URL_PAGE{editer_poulpe,id_auteur=#ID_AUTEUR}" title="<:octopouce:label_editer|attribut_html:>"></a>]</td>
-			<td class="editer carte"><a href="#URL_PAGE{carte_membre,id_auteur=#ID_AUTEUR}" title="<:octopouce:label_encarter|attribut_html:>"></a></td>
+			<td class="editer carte"><a href="#URL_PAGE{imprimer,id_auteur=#ID_AUTEUR}" title="<:octopouce:label_encarter|attribut_html:>"></a></td>
 		</tr>
 	</BOUCLE_liste_aut>
 	[(#REM|changer_typo)]

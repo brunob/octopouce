@@ -1,0 +1,31 @@
+[(#SESSION{statut}|=={0minirezo}|sinon_interdire_acces{#URL_SITE_SPIP,401})][(#HTTP_HEADER{Content-type: text/html[; charset=(#CHARSET)]})]<BOUCLE_auteur(AUTEURS){id_auteur}{tout}>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<style>
+@font-face {
+	font-family: 'abel';
+	src: url('#CHEMIN{css/fonts/abel-regular.woff2}') format('woff2'),
+		 url('#CHEMIN{css/fonts/abel-regular.woff}') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+body { width: 100%; margin: 0; padding: 0; font-family: abel, sans-serif; }
+.quoi { text-align: center; }
+[(#ENV{quoi}|=={lettre}|oui)
+svg { border: 1px solid #ddd; }
+]
+@media print {
+   @page { margin: 0cm; }
+   img { max-width: 100% !important; }
+   .quoi { display: none; }
+}
+</style>
+</head>
+<body>
+<p class="quoi"><a href="[(#SELF|parametre_url{quoi,carte})]"><:octopouce:lien_imprimer_carte:></a> | <a href="[(#SELF|parametre_url{quoi,lettre})]"><:octopouce:lien_imprimer_lettre:></a></p>
+[(#ENV{quoi}|!={lettre}|oui)<INCLURE{fond=noisettes/carte_membre,id_auteur} />]
+[(#ENV{quoi}|=={lettre}|oui)<INCLURE{fond=noisettes/lettre_adhesion,id_auteur} />]
+</body>
+</html>
+</BOUCLE_auteur>

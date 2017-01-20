@@ -6,6 +6,8 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
+	'explication_carte_membre' => 'Votre carte de membre à découper. Vous pouvez passer dans une permanence Octopouce.NET pour vous procurer une version plus sympatoche.',
+	
 	'info_1_poulpe' => '1 poulpe',
 	'info_nb_poulpes' => '@nb@ poulpes',
 	
@@ -17,9 +19,12 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_inscription' => 'Inscription',
 	'label_naissance' => 'Naissance',
 	'label_pseudo' => 'Pseudo',
+	'lettre_adhesion_mention' => 'Document édité le : @date@ via www.octopouce.net',
 	'lien_contact' => 'Contacter',
 	'lien_creer_utilisateur' => 'Créer un compte utilisateur',
 	'lien_gestion_utilisateurs' => 'Gestion des utilisateurs',
+	'lien_imprimer_carte' => 'Carte de membre',
+	'lien_imprimer_lettre' => 'Lettre d\'adhésion',
 	'lien_localiser_tag' => 'Modifier la localisation',
 	'lien_suivi_revisions' => 'Suivi des modifications',
 	

@@ -1,23 +1,4 @@
-[(#SESSION{statut}|=={0minirezo}|sinon_interdire_acces{#URL_SITE_SPIP,401})][(#HTTP_HEADER{Content-type: text/html[; charset=(#CHARSET)]})]<BOUCLE_auteur(AUTEURS){id_auteur}{tout}>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<style>
-@font-face {
-	font-family: 'abel';
-	src: url('#CHEMIN{css/fonts/abel-regular.woff2}') format('woff2'),
-		 url('#CHEMIN{css/fonts/abel-regular.woff}') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-body { width: 100%; margin: 0; padding: 0; font-family: abel, sans-serif; }
-@media print {
-   @page { margin: 0cm; }
-   img { max-width: 100% !important; }
-}
-</style>
-</head>
-<body>
+<BOUCLE_auteur(AUTEURS){id_auteur}{tout}>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
@@ -251,6 +232,4 @@ body { width: 100%; margin: 0; padding: 0; font-family: abel, sans-serif; }
 	<text style="font-family: 'Abel'; font-weight: normal; font-style: normal;" font-size="12"  x="18" y="120">#TEL_FIXE[[(#TEL_FIXE|oui)/ ](#TEL_PORTABLE)]</text>
   </g>
 </svg>
-</body>
-</html>
 </BOUCLE_auteur>
