@@ -36,13 +36,13 @@ nav#entete { z-index: 1001; }
 .accueil .intro h1 { font-size: 2.5em; }
 .accueil .intro .chapo { font-family: abel; font-size: 1.4em; }
 .accueil .cols { margin: 2em 0; text-align: center; }
-.accueil .cols li { display: inline-block; max-width: 24%; padding: 0 1%; vertical-align: top; }
+.accueil .cols li { display: inline-block; max-width: 23%; margin: 0 -1%; padding: 0 1%; vertical-align: top; }
 .accueil .cols li h2 { margin-bottom: 1em; color: #fc3f93; font-size: 1.2em; }
 .accueil .cols li .chapo { font-size: 0.85em; line-height: 1.25; }
 .accueil .cols li .suite { display: inline-block; margin-top: 1em; background: #fc3f93; padding: 0.5em 1em; color: #fff; text-decoration: none; }
 .accueil .divider { padding: 0.25em 0; text-align: center; background: #4d4d4d; color: #fff; font-family: abel; font-size: 2em; }
 .accueil .divider em { font-style: normal; color: #fc3f93; }
-.accueil .login li { max-width: 32%; }
+.accueil .login li { max-width: 31%; }
 .accueil #tous_messages { max-width: 660px; margin: 0 auto; }
 
 /* page message */
