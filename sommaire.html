@@ -1,0 +1,99 @@
+#CACHE{0}
+<BOUCLE_auteur(AUTEURS){tout}{id_auteur=#SESSION{id_auteur}}>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[(#NOM_SITE_SPIP|textebrut)][ - (#NOM|textebrut)]</title>
+	<!--[(#LANG|lang_select)]-->
+	<meta charset="#CHARSET">
+	<link rel="alternate" type="application/rss+xml" title="General RSS for [(#NOM|textebrut)]" href="#URL_SITE_SPIP/#URL_AUTEUR/follow/feed">
+	[(#SESSION{id_auteur}|sinon{0}|microcache{inc/head_langue})]
+	<INCLURE{fond=inc/head}{lang=fr}>
+
+	[<link rel="stylesheet" href="(#URL_PAGE{couleur,couleur=#COULEUR})" type="text/css" media="all">]
+
+	<INCLURE{fond=inc/head_session}>
+
+</head>
+<body class="accueil plier">
+
+<INCLURE{fond=inc/entete}>
+
+<div class="intro">
+	<div class="container">
+		[(#CHEMIN{imgs/logo_intro.png}|image_reduire{200})]
+		<h1><:octopouce:message_bienvenue:></h1>
+		[<div class="chapo">(#DESCRIPTIF_SITE_SPIP)</div>]
+	</div>
+</div>
+
+<div class="container">
+	<ul class="cols alire">
+		<BOUCLE_alire(ARTICLES){id_rubrique=2}{par num titre}>
+		<li>
+			<h2>#TITRE</h2>
+			[<div class="chapo">(#CHAPO)</div>]
+			<a href="#URL_ARTICLE" class="suite">lire</a>
+		</li>
+		</BOUCLE_alire>
+	</ul>
+</div>
+
+<BOUCLE_total(AUTEURS){tout}{statut!=nouveau} />#SET{total,#GRAND_TOTAL}<//B_total>
+<h3 class="divider"><:octopouce:titre_home_rejoindre{nb=#GET{total}}:></h3>
+[(#INCLURE{fond=modeles/carte_gis,
+	id_map=_villes,
+	objets=auteurs,
+	zoom_wheel=non,
+	no_control=oui})]
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){
+	$(function(){
+		$('#map_villes').on('load', function(){
+			this.map.setGeoJsonFeatureIcon = function (feature, layer) {
+				var childCount = feature.properties.count;
+				var c = ' marker-cluster-';
+				if (childCount == 1) {
+					c += 'dot';
+				} else if (childCount < 5) { // 100
+					c += 'small';
+				} else if (childCount < 10) { // 1000
+					c += 'medium';
+				} else {
+					c += 'large';
+				}
+				layer.setIcon(L.divIcon({ html: '<div><span>' + ((childCount == 1) ? '' : childCount) + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) }));
+			};
+		});
+	});
+})(jQuery);
+/*]]>*/
+</script>
+
+<div class="container">
+	<ul class="cols login">
+		<li>
+			<div class="chapo"><:octopouce:message_adherer:></div>
+			<a href="#" class="suite"><:octopouce:lien_adherer:></a>
+		</li>
+		<li>
+			<div class="chapo"><:octopouce:message_connecter:></div>
+			<a href="#" class="suite"><:lien_connecter:></a>
+		</li>
+	</ul>
+</div>
+
+<h3 class="divider"><:octopouce:titre_home_live:></h3>
+
+<div class="container">
+	<div id="tous_messages">
+		<INCLURE{fond=noisettes/contenu/contenu_mot_fin}{env}{tag=#octodo} />
+	</div>
+</div>
+
+
+</body>
+</html>
+</BOUCLE_auteur>
+#FILTRE{mini_html}

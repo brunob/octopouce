@@ -22,6 +22,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_naissance' => 'Naissance',
 	'label_pseudo' => 'Pseudo',
 	'lettre_adhesion_mention' => 'Document édité le : @date@ via www.octopouce.net',
+	'lien_adherer' => 'Adhérer',
 	'lien_contact' => 'Contacter',
 	'lien_creer_utilisateur' => 'Créer un compte utilisateur',
 	'lien_gestion_utilisateurs' => 'Gestion des utilisateurs',
@@ -30,6 +31,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'lien_localiser_tag' => 'Modifier la localisation',
 	'lien_suivi_revisions' => 'Suivi des modifications',
 	'lien_supprimer_message' => 'Supprimer ce message',
+	
+	'message_adherer' => 'J\'ai lu la charte d\'engagement, je souhaite devenir poulpe.',
+	'message_bienvenue' => 'Bienvenue sur Octopouce.net',
+	'message_connecter' => 'Je suis déjà poulpe, je souhaite accéder à mon espace de discussion.',
 	
 	'profil_adresse_code_postal' => 'Code postal',
 	'profil_adresse_ville' => 'Ville',
@@ -42,6 +47,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	'titre_editer_poulpe' => 'Modifier un compte utilisateur',
 	'titre_editer_poulpe_nouveau' => 'Nouveau compte utilisateur',
+	'titre_home_live' => '<em>#live pouits</em> du réseau',
+	'titre_home_rejoindre' => 'Rejoingez les <em>@nb@ poulpes</em> du réseau',
 	'titre_octo_hasard' => 'Octo hasard (8 au hasard)',
 	'titre_page_people' => 'Tous les poulpes',
 	'titre_page_people_nb' => 'Les @total@ poulpes',

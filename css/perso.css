@@ -1,3 +1,4 @@
+/* à ranger */
 nav#entete { z-index: 1001; }
 #entete_people .carte_gis,
 #entete_people .formulaire_editer_gis { margin: 10px 0; }
@@ -6,6 +7,43 @@ nav#entete { z-index: 1001; }
 .button { padding: 4px 10px; background-color: #666; color: white; border: 0; border-radius: 4px; }
 .button:hover { background-color: #555; cursor: pointer; }
 #droite .actions { margin: 2em 0; text-align: center; }
+
+@font-face {
+    font-family: 'abel';
+    src: url('fonts/abel-regular.woff2') format('woff2'),
+         url('fonts/abel-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'fonarto';
+    src: url('fonts/fonarto.woff2') format('woff2'),
+         url('fonts/fonarto.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* layout / base */
+#principale { border: 0; padding-top: 35px; }
+
+/* page sommaire */
+.accueil .container { max-width: 960px; margin: 0 auto; }
+.accueil h1,
+.accueil h2,
+.accueil h3 { font-family: fonarto; font-weight: normal; }
+.accueil .intro { padding: 35px 0 2em; background-color: #f9f9f9; text-align: center; }
+.accueil .intro img { margin: 1em auto; }
+.accueil .intro h1 { font-size: 2.5em; }
+.accueil .intro .chapo { font-family: abel; font-size: 1.4em; }
+.accueil .cols { margin: 2em 0; text-align: center; }
+.accueil .cols li { display: inline-block; max-width: 24%; padding: 0 1%; vertical-align: top; }
+.accueil .cols li h2 { margin-bottom: 1em; color: #fc3f93; font-size: 1.2em; }
+.accueil .cols li .chapo { font-size: 0.85em; line-height: 1.25; }
+.accueil .cols li .suite { display: inline-block; margin-top: 1em; background: #fc3f93; padding: 0.5em 1em; color: #fff; text-decoration: none; }
+.accueil .divider { padding: 0.25em 0; text-align: center; background: #4d4d4d; color: #fff; font-family: abel; font-size: 2em; }
+.accueil .divider em { font-style: normal; color: #fc3f93; }
+.accueil .login li { max-width: 32%; }
+.accueil #tous_messages { max-width: 660px; margin: 0 auto; }
 
 /* page message */
 .message #droite .button.delete { background-color: #ff4136; color: #fff; text-decoration: none; }
