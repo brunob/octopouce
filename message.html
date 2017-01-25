@@ -25,7 +25,7 @@
 		</div>
 		<aside id="droite">
 			[(#SESSION{statut}|=={0minirezo}|oui)
-			<p class="actions"><a href="#URL_ACTION_AUTEUR{poubelle,#ID_ME}" class="button delete"><:octopouce:lien_supprimer_message:></a></p>
+			[<p class="actions">(#BOUTON_ACTION{<:octopouce:lien_supprimer_message:>,#URL_ACTION_AUTEUR{poubelle,#ID_ME},button delete,<:octopouce:confirm_supprimer_message:>})</p>]
 			]
 			[(#SESSION{id_auteur}|non)<div id="charger_pave_inscription"></div>]
 			[(#REM) plugin seenthis_opencalais]

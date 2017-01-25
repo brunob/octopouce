@@ -6,6 +6,8 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
+	'confirm_supprimer_message' => 'Attention, vous avez demandé à supprimer ce message. Souhaitez-vous continuer ?',
+	
 	'explication_carte_membre' => 'Votre carte de membre à découper. Vous pouvez passer dans une permanence Octopouce.NET pour vous procurer une version plus sympatoche.',
 	
 	'info_1_poulpe' => '1 poulpe',
