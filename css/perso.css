@@ -31,7 +31,7 @@ nav#entete { z-index: 1001; }
 .accueil h1,
 .accueil h2,
 .accueil h3 { font-family: fonarto; font-weight: normal; }
-.accueil .intro { padding: 35px 0 2em; background-color: #f9f9f9; text-align: center; }
+.accueil .intro { padding: 35px 0 2em; text-align: center; background: #f9f9f9 url(img/bras.png) center 35px no-repeat; }
 .accueil .intro img { margin: 1em auto; }
 .accueil .intro h1 { font-size: 2.5em; }
 .accueil .intro .chapo { font-family: abel; font-size: 1.4em; }
