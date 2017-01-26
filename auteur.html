@@ -81,6 +81,7 @@
 			[(#ID_AUTEUR|microcache{noisettes/auteur_follow_people})]
 			[(#ID_AUTEUR|microcache{noisettes/auteur_followed})]
 			<INCLURE{fond=noisettes/mots_lies/mots_lies_auteur}{id_auteur}{ajaxload}>
+			[(#SESSION{id_auteur}|=={#ID_AUTEUR}|oui)<div id="alertes"></div>]
 		</aside>
 
 		<INCLURE{fond=inc/footer}>

@@ -64,6 +64,7 @@ nav#entete { z-index: 1001; }
 
 /* page auteur */
 #entete_people .outils #contact a { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAG1BMVEX///+rq6urq6urq6urq6urq6urq6urq6urq6tt721NAAAACHRSTlMAESIzRGaI3Ym/Z2IAAAA+SURBVHgBZc4xDgAhDAPBNZDA/198yEqRE1t5Gghzn2pPaluc1oVwMgIXxkqBchl3RKQwgDGA54HW/9N+zgf1/AMlGrObswAAAABJRU5ErkJggg==); }
+.people #alertes { margin-top: 2em; }
 
 /* page mot/tag */
 #entete_people .outils .rss.editer .localiser { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAJFBMVEX///+rq6urq6v////19fXl5eXg4ODV1dXMzMzAwMC2trarq6tR5jDbAAAAA3RSTlMAM932fw+HAAAASUlEQVR4AW3OXQrAMAgDYKvd4s/97zvDZDCoD8GvoaAsrRldwj2ApKTDrSd6aaRdlXu/CL7CDk3d/OODJGrACh+CBaFMOFN/5zxvYATC1+LlGAAAAABJRU5ErkJggg==); }
