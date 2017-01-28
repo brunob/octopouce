@@ -45,8 +45,8 @@ nav#entete { z-index: 1001; }
 .accueil .footer { margin-top: 2em; padding: 2em 0; background: #f2f2f2; }
 .accueil .footer .grid { margin: 0 auto; }
 .accueil .footer .grid > li { text-align: left; }
-.accueil .footer .menu-items .item + .item { margin-top: 0.5em; }
-.accueil .footer .menu-items .item a { color: #333; text-decoration: none; }
+.accueil .footer .menu-items .item + .item { margin-top: 0.25em; }
+.accueil .footer .menu-items .item a { color: #333; text-decoration: none; font-family: abel; }
 
 /* page message */
 .message #droite .button.delete { background-color: #ff4136; color: #fff; text-decoration: none; }
