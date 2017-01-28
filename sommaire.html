@@ -25,7 +25,7 @@
 </div>
 
 <div class="container">
-	<ul class="cols alire">
+	<ul class="grid has-gutter alire">
 		<BOUCLE_alire(ARTICLES){id_rubrique=2}{par num titre}>
 		<li>
 			<h2>#TITRE</h2>
@@ -69,12 +69,12 @@
 </script>
 
 <div class="container">
-	<ul class="cols login">
-		<li>
+	<ul class="grid has-gutter login">
+		<li class="one-third push">
 			<div class="chapo"><:octopouce:message_adherer:></div>
 			<a href="#" class="suite"><:octopouce:lien_adherer:></a>
 		</li>
-		<li>
+		<li class="one-third pull">
 			<div class="chapo"><:octopouce:message_connecter:></div>
 			<a href="#" class="suite"><:lien_connecter:></a>
 		</li>
@@ -89,6 +89,20 @@
 	</div>
 </div>
 
+<div class="footer">
+	<div class="container">
+		<B_menus>
+		<ul class="grid has-gutter">
+			<BOUCLE_menus(MENUS){identifiant==^pied_}{par identifiant}>
+			<li>
+				<h2>#TITRE</h2>
+				[(#INCLURE{fond=inclure/menu,id_menu})]
+				</BOUCLE_menus>
+			</li>
+		</ul>
+		</B_menus>
+	</div>
+</div>
 
 </body>
 </html>
