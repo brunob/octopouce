@@ -23,6 +23,10 @@
 		[(#SESSION{id_auteur}|non)<div class="centrer"><INCLURE{fond=slogan}></div>]
 		[(#ID_AUTEUR|microcache{noisettes/entete_auteur})]
 		<div id="centre">
+			[(#SESSION{id_auteur}|=={#ID_AUTEUR}|oui)
+			<div id="tetiere">
+				[<div class="formulaire_principal">(#FORMULAIRE_POSTER_MESSAGE)</div>]
+			</div>]
 			<BOUCLE_block(spip_me_block){id_block=#ID_AUTEUR}{id_auteur=#SESSION{id_auteur}}>#SET{block,oui}</BOUCLE_block>
 			<BOUCLE_contact(AUTEURS){si #SESSION{id_auteur}|et{#SESSION{id_auteur}|!={#ID_AUTEUR}}|et{#GET{block}|non}}{tout}{id_auteur}>
 			[<div id="tetiere">(#FORMULAIRE_ECRIRE_AUTEUR)</div>]
