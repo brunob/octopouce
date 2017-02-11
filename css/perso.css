@@ -48,6 +48,7 @@ body { color: #000; }
 .accueil .footer .grid { margin: 0 auto; }
 .accueil .footer .grid > li { text-align: left; }
 .accueil .footer .menu-items .item + .item { margin-top: 0.25em; }
+.accueil .footer .menu-items .item,
 .accueil .footer .menu-items .item a { color: #333; text-decoration: none; font-family: abel; }
 
 /* page message */
