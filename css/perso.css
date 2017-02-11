@@ -7,6 +7,7 @@ nav#entete { z-index: 1001; }
 .button { padding: 4px 10px; background-color: #666; color: white; border: 0; border-radius: 4px; }
 .button:hover { background-color: #555; cursor: pointer; }
 #droite .actions { margin: 2em 0; text-align: center; }
+#droite h3 { color: #999; }
 
 @font-face {
     font-family: 'abel';
@@ -24,6 +25,7 @@ nav#entete { z-index: 1001; }
 }
 
 /* layout / base */
+body { color: #000; }
 #principale { border: 0; padding-top: 35px; }
 
 /* page sommaire */
