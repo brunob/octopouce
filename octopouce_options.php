@@ -11,3 +11,11 @@ define('_UTILISER_BOXSIZING_HTC', false);
 function autoriser_ecrire($faire, $type, $id, $qui, $opt) {
 	return autoriser('webmestre', null, null, $qui, $opt);
 }
+
+// utiliser des mots de poulpes dans les urls
+$GLOBALS['url_arbo_types'] = array(
+	'mot' => 'tag',
+	'auteur' => 'poulpes',
+	'message' => 'pouits',
+	'site' => 'sites'
+);
