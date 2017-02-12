@@ -1,14 +1,3 @@
-/* à ranger */
-nav#entete { z-index: 1001; }
-#entete_people .carte_gis,
-#entete_people .formulaire_editer_gis { margin: 10px 0; }
-#droite > h2 { margin: 10px 15px; color: #fff; font-size: 110%; }
-
-.button { padding: 4px 10px; background-color: #666; color: white; border: 0; border-radius: 4px; }
-.button:hover { background-color: #555; cursor: pointer; }
-#droite .actions { margin: 2em 0; text-align: center; }
-#droite h3 { color: #999; }
-
 @font-face {
     font-family: 'abel';
     src: url('fonts/abel-regular.woff2') format('woff2'),
@@ -26,7 +15,17 @@ nav#entete { z-index: 1001; }
 
 /* layout / base */
 body { color: #000; }
+
 #principale { border: 0; padding-top: 35px; }
+
+nav#entete { z-index: 1001; }
+
+#droite > h2 { margin: 10px 15px; color: #fff; font-size: 110%; }
+#droite .actions { margin: 2em 0; text-align: center; }
+#droite h3 { color: #999; }
+
+.button { padding: 4px 10px; background-color: #666; color: white; border: 0; border-radius: 4px; }
+.button:hover { background-color: #555; cursor: pointer; }
 
 /* page sommaire */
 .accueil .container { max-width: 960px; margin: 0 auto; }
@@ -70,12 +69,16 @@ body { color: #000; }
 
 /* page auteur */
 #entete_people .outils #contact a { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAG1BMVEX///+rq6urq6urq6urq6urq6urq6urq6urq6tt721NAAAACHRSTlMAESIzRGaI3Ym/Z2IAAAA+SURBVHgBZc4xDgAhDAPBNZDA/198yEqRE1t5Gghzn2pPaluc1oVwMgIXxkqBchl3RKQwgDGA54HW/9N+zgf1/AMlGrObswAAAABJRU5ErkJggg==); }
-.people #alertes { margin-top: 2em; }
+.people #alertes ul { margin-top: 2em; color: #444; }
+.people #alertes ul li a { color: #999; }
+.people #alertes ul li .texte_message .texte { color: #444; }
 
 /* page mot/tag */
 #entete_people .outils .rss.editer .localiser { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAJFBMVEX///+rq6urq6v////19fXl5eXg4ODV1dXMzMzAwMC2trarq6tR5jDbAAAAA3RSTlMAM932fw+HAAAASUlEQVR4AW3OXQrAMAgDYKvd4s/97zvDZDCoD8GvoaAsrRldwj2ApKTDrSd6aaRdlXu/CL7CDk3d/OODJGrACh+CBaFMOFN/5zxvYATC1+LlGAAAAABJRU5ErkJggg==); }
 
 /* page localiser_tag */
+#entete_people .carte_gis,
+#entete_people .formulaire_editer_gis { margin: 10px 0; }
 #entete_people .formulaire_editer_gis label,
 #entete_people .formulaire_editer_gis .explication { color: #666; }
 #entete_people .formulaire_editer_gis .editer_import,
