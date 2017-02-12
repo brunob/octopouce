@@ -149,8 +149,6 @@
 					<div id="farb"></div>
 					<input type="text" name="couleur" value="#[(#ENV**{couleur}|replace{'#',''})]">
 				</div>
-			
-			
 				<div class="editer">
 					<label><:seenthis:profil_logo:></label>
 					[(#SESSION{id_auteur}|fichier_logo_auteur|image_reduire{150})
@@ -158,35 +156,7 @@
 					]
 					<input type="file" name="image_logo">
 				</div>
-			
-
-			
-				<div class="editer[ (#ENV**{erreurs}|table_valeur{image_bandeau}|?{erreur})]">
-					<label><:seenthis:profil_entete:></label>
-					[(#SESSION{id_auteur}|fichier_bandeau|image_reduire{150})
-						<div><input type="submit" value="<:supprimer:>" name="supprimer_bandeau"></div>
-					]
-					[<span class="erreur_message">(#ENV**{erreurs}|table_valeur{image_bandeau})</span>]
-					<input type="file" name="image_bandeau">
-				</div>
-			
-				<div class="editer">
-					<label><:seenthis:profil_fond:></label>
-					[(#SESSION{id_auteur}|fichier_fond|image_reduire{150})
-						<div><input type="submit" value="<:supprimer:>" name="supprimer_fond"></div>					
-					]
-					<input type="file" name="image_fond">
-				</div>
-			
 			</div>
-			[(#PLUGIN{seenthis_importer_flux}|oui)
-			<h3><:seenthis:profil_rss:></h3>
-			
-			<div class="editer-groupe">
-				<div class="editer"><label><:sites:entree_adresse_fichier_syndication:></label>
-					<input type="text" placeholder="http://" class="text" name="rss" value="[(#ENV*{rss})]" />
-				</div>
-			</div>]
 
 			<p class="boutons">
 				<input type="submit" value="<:enregistrer:>">
