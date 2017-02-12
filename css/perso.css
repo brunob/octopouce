@@ -70,6 +70,7 @@ nav#entete { z-index: 1001; }
 .poulpes .logo_auteur .nom,
 .poulpes .logo_auteur .login { padding-left: 60px; display: block; }
 .poulpes .bio { display: none; }
+.people #droite .following_big .logo_auteur:hover a { color: #fc3f93; }
 
 /* page auteur */
 #entete_people .outils #contact a { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAG1BMVEX///+rq6urq6urq6urq6urq6urq6urq6urq6tt721NAAAACHRSTlMAESIzRGaI3Ym/Z2IAAAA+SURBVHgBZc4xDgAhDAPBNZDA/198yEqRE1t5Gghzn2pPaluc1oVwMgIXxkqBchl3RKQwgDGA54HW/9N+zgf1/AMlGrObswAAAABJRU5ErkJggg==); }
