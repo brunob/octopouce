@@ -20,7 +20,7 @@ body { color: #000; }
 
 nav#entete { z-index: 1001; }
 
-#droite > h2 { margin: 10px 15px; color: #fff; font-size: 110%; }
+#droite > h2 { margin: 10px 15px; color: #999; font-size: 110%; }
 #droite .actions { margin: 2em 0; text-align: center; }
 #droite h3 { color: #999; }
 
