@@ -24,6 +24,10 @@ nav#entete { z-index: 1001; }
 #droite .actions { margin: 2em 0; text-align: center; }
 #droite h3 { color: #999; }
 
+.onglets { padding-top: 0.5em; overflow: hidden; background-color: transparent; }
+.onglets a { color: #999; }
+.onglets a:hover { color: #666; }
+
 .button { padding: 4px 10px; background-color: #666; color: white; border: 0; border-radius: 4px; }
 .button:hover { background-color: #555; cursor: pointer; }
 

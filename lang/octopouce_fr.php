@@ -29,6 +29,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'lien_imprimer_carte' => 'Carte de membre',
 	'lien_imprimer_lettre' => 'Feuille d\'adhésion',
 	'lien_localiser_tag' => 'Modifier la localisation',
+	'lien_messages_only' => 'Vos messages uniquement',
 	'lien_suivi_revisions' => 'Suivi des modifications',
 	'lien_supprimer_message' => 'Supprimer ce message',
 	
