@@ -11,7 +11,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'Z' => 'ZZzZZzzz',
 
 	// A
-	'accueil' => 'Accueil',
+	'accueil' => 'Live',
 	'annuler' => 'Annuler',
 	'auteur_block' => 'Bloquer @people@',
 	'auteur_block_you' => 'Ce poulpe vous a bloqué. Vous ne pouvez pas commenter ses messages.',
