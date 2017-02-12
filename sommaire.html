@@ -7,7 +7,15 @@
 	[(#VAL{0}|microcache{inc/head_langue})]
 	<INCLURE{fond=inc/head}{lang=fr}>
 
-	[<link rel="stylesheet" href="(#URL_PAGE{couleur,couleur=#COULEUR})" type="text/css" media="all">]
+	[<link rel="stylesheet" href="(#URL_PAGE{couleur,couleur=#COULEUR})" type="text/css" media="all">][
+	(#SESSION{id_auteur}|non)
+	[<link rel="stylesheet" href="(#URL_PAGE{inscription,couleur=#COULEUR})" type="text/css" media="all">]
+	<style><!--
+	#charger_pave_inscription {
+		display: none;
+		text-align: left;
+	}
+	--></style>]
 
 	<INCLURE{fond=inc/head_session}>
 
@@ -70,9 +78,10 @@
 
 <div class="container">
 	<ul class="grid has-gutter login">
-		<li class="one-third push">
+		[(#SESSION{id_auteur}|non)<li class="one-third push pull" id="charger_pave_inscription"></li>
+		]<li class="one-third push">
 			<div class="chapo"><:octopouce:message_adherer:></div>
-			<a href="#" class="suite"><:octopouce:lien_adherer:></a>
+			<a href="#" onclick="$('.grid.login .one-third').hide(function(){$('#charger_pave_inscription').slideDown();}); return false;" class="suite"><:octopouce:lien_adherer:></a>
 		</li>
 		<li class="one-third pull">
 			<div class="chapo"><:octopouce:message_connecter:></div>
