@@ -44,6 +44,8 @@
 		[(#SET{follow,all})]
 	]
 <div id="principale">
+	[(#REM) visiteur non connecté, oust ! ]
+	[(#SESSION{id_auteur}|sinon_interdire_acces{#URL_SITE_SPIP,401})]
 	<div>
 		[(#SESSION{id_auteur}|non)<div class="centrer"><INCLURE{fond=slogan}></div>]
 
