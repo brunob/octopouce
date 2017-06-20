@@ -1,4 +1,4 @@
-[(#SESSION{statut}|=={0minirezo}|sinon_interdire_acces{#URL_SITE_SPIP,401})][(#HTTP_HEADER{Content-type: text/html[; charset=(#CHARSET)]})]<BOUCLE_auteur(AUTEURS){id_auteur}{tout}>
+[(#SESSION{statut}|=={0minirezo}|ou{#SESSION{id_auteur}|=={#ENV{id_auteur}}|oui}|sinon_interdire_acces{#URL_SITE_SPIP,401})][(#HTTP_HEADER{Content-type: text/html[; charset=(#CHARSET)]})]<BOUCLE_auteur(AUTEURS){id_auteur}{tout}>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
