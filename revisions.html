@@ -47,10 +47,10 @@
 			
 			[(#SESSION{statut}|=={0minirezo}|sinon_interdire_acces{#URL_SITE_SPIP,401})]
 
-			[(#INCLURE{fond=liste/versions,
+			<INCLURE{fond=liste/versions,
 				nb=30,
 				env,
-				ajax})]
+				ajax} />
 
 		</div>
 	</div>
