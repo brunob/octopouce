@@ -98,6 +98,11 @@ nav#entete { z-index: 1001; }
 #entete_people .formulaire_editer_gis .rechercher_adresse input { min-width: 280px; }
 #entete_people .formulaire_editer_gis .boutons { margin-top: 2em; text-align: center; }
 
+/* pages nécessitant plus de largeur */
+@media (min-width: 768px) { .wide #principale { width: 750px; } }
+@media (min-width: 992px) { .wide #principale { width: 970px; } }
+@media (min-width: 1200px) { .wide #principale { width: 1170px; } }
+
 /*page poulpes */
 #entete_people .outils .rss.editer .add { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAJ1BMVEX///+rq6urq6v////19fXw8PDl5eXg4ODV1dXMzMy7u7u2trarq6vFvi0VAAAAA3RSTlMAM932fw+HAAAAT0lEQVR42lXOUQ7AIAgDULSzVPT+5x1zbtn6QXhJE7BS504tlvsryxEHtHTBAYwHSsyhhRCpHlgA0FwOyWYg42wgN8B+1zozHkx8j/7eOQGCDQTO1ichpgAAAABJRU5ErkJggg==); }
 #entete_people .outils .rss.editer .revisions { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAJ1BMVEX///+rq6urq6v////19fXw8PDq6urg4ODV1dXMzMy7u7u2trarq6u2q0TUAAAAA3RSTlMAM932fw+HAAAAU0lEQVQI103OMQLDMAjAQGJiCs79/70d0qHaNElxLT/WFQvTPVjBubN2bgS5H+fsTZhEOTlCFYrdr0w11UIneHKEJz+wb4LJrMo8xOLpqjf6v/MFiHYFA9Nbc0sAAAAASUVORK5CYII=); }
