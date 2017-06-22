@@ -59,6 +59,20 @@ nav#entete { z-index: 1001; }
 .accueil .divider em { font-style: normal; color: #fc3f93; }
 .accueil #tous_messages { max-width: 660px; margin: 0 auto; }
 
+/* page article */
+ul.spip,
+ol.spip { margin-left: 50px; }
+ul.spip li,
+ol.spip li { list-style: initial; }
+@media (max-width: 640px) {
+	ul.spip,
+	ol.spip { margin-left: 1.5em; }
+}
+ul.spip { list-style-type: square; }
+li ul.spip { list-style-type: disc; }
+li li ul.spip { list-style-type: circle; }
+ol.spip { list-style-type: decimal; }
+
 /* page message */
 .message #droite .button.delete { background-color: #ff4136; color: #fff; text-decoration: none; }
 .message #droite .button.delete:hover { background-color: red; }
