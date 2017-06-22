@@ -166,7 +166,7 @@ p > .diff-para-supprime { display: block; }
 .formulaire_inscription .editer-groupe .editer input.date { width: 110px; box-sizing: border-box; }
 .formulaire_inscription .editer-groupe .editer.saisie_case label { display: inline; }
 .formulaire_inscription .editer-groupe .editer.saisie_case input { vertical-align: text-bottom; }
-.formulaire_inscription .reponse_formulaire { margin-top: 1em; font-weight: bold; }
+.formulaire_inscription .reponse_formulaire { margin-top: 1em; font-weight: bold; color: #fc3f93; }
 
 .formulaire_ecrire_auteur { margin-bottom: 0.5em; }
 .formulaire_ecrire_auteur legend { display: none; }
