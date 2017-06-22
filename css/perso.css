@@ -18,6 +18,8 @@ body { color: #000; }
 
 #principale { border: 0; padding-top: 35px; }
 
+.container { max-width: 960px; margin: 0 auto; }
+
 nav#entete { z-index: 1001; }
 
 #entete_people .outils { width: 245px; }
@@ -25,6 +27,14 @@ nav#entete { z-index: 1001; }
 #droite > h2 { margin: 10px 15px; color: #999; font-size: 110%; }
 #droite .actions { margin: 2em 0; text-align: center; }
 #droite h3 { color: #999; }
+
+.footer { margin-top: 2em; padding: 2em 0; background: #f2f2f2; }
+.footer .container .grid { margin: 0 auto; text-align: center; }
+.footer .grid > li { text-align: left; }
+.footer .grid li h2 { margin-bottom: 1em; color: #fc3f93; font-size: 1.2em; font-family: fonarto; font-weight: normal; }
+.footer .menu-items .item + .item { margin-top: 0.25em; }
+.footer .menu-items .item,
+.footer .menu-items .item a { color: #333; text-decoration: none; font-family: abel; }
 
 .onglets { padding-top: 0.5em; overflow: hidden; background-color: transparent; }
 .onglets a { color: #999; }
@@ -34,7 +44,6 @@ nav#entete { z-index: 1001; }
 .button:hover { background-color: #555; cursor: pointer; }
 
 /* page sommaire */
-.accueil .container { max-width: 960px; margin: 0 auto; }
 .accueil h1,
 .accueil h2,
 .accueil h3 { font-family: fonarto; font-weight: normal; }
@@ -49,12 +58,6 @@ nav#entete { z-index: 1001; }
 .accueil .divider { padding: 0.25em 0; text-align: center; background: #4d4d4d; color: #fff; font-family: abel; font-size: 2em; }
 .accueil .divider em { font-style: normal; color: #fc3f93; }
 .accueil #tous_messages { max-width: 660px; margin: 0 auto; }
-.accueil .footer { margin-top: 2em; padding: 2em 0; background: #f2f2f2; }
-.accueil .footer .grid { margin: 0 auto; }
-.accueil .footer .grid > li { text-align: left; }
-.accueil .footer .menu-items .item + .item { margin-top: 0.25em; }
-.accueil .footer .menu-items .item,
-.accueil .footer .menu-items .item a { color: #333; text-decoration: none; font-family: abel; }
 
 /* page message */
 .message #droite .button.delete { background-color: #ff4136; color: #fff; text-decoration: none; }
