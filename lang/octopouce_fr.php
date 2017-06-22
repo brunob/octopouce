@@ -12,6 +12,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	'info_1_poulpe' => '1 poulpe',
 	'info_nb_poulpes' => '@nb@ poulpes',
+	'inscription_legend' => 'Infos persos',
+	'inscription_explication' => 'Les informations suivantes ne seront pas visibles par les autres poulpes du réseau mais sont indispensables pour l’inscription au réseau (gage de confiance) et l’obtention la carte de membre.',
 	
 	'label_afficher_tout' => 'Afficher tout',
 	'label_adresse' => 'Adresse',
