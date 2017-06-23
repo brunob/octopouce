@@ -50,6 +50,29 @@ function octopouce_pre_edition($flux){
 }
 
 /**
+ * Insertion dans le pipeline formulaire_charger (SPIP)
+ * Charger les extras sur le form d'inscription (pour ne pas perdre leur valeur en cas d'erreur dans verifier)
+ * 
+ * @pipeline formulaire_charger
+ * @param array $flux Données du pipeline
+ * @return array      Données du pipeline
+ */
+function octopouce_formulaire_charger($flux){
+	if (!test_espace_prive() and $flux['args']['form'] == 'inscription') {
+		include_spip('base/octopouce');
+		$extras = octopouce_declarer_champs_extras();
+		foreach ($extras['spip_auteurs'] as $extra) {
+			$nom = $extra['options']['nom'];
+			$flux['data'][$nom] = '';
+		}
+		$flux['data']['commune'] = '';
+		$flux['data']['ville'] = '';
+		$flux['data']['cgu'] = '';
+	}
+	return $flux;
+}
+
+/**
  * Insertion dans le pipeline formulaire_verifier (SPIP)
  * Vérifier les extras obligatoires sur les forms inscription & profil
  * Imposer le statut envoyé par le formulaire editer_auteur dans le public (pas de fourberie)
