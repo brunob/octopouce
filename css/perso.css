@@ -72,6 +72,24 @@ ul.spip { list-style-type: square; }
 li ul.spip { list-style-type: disc; }
 li li ul.spip { list-style-type: circle; }
 ol.spip { list-style-type: decimal; }
+table.spip { max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; margin-bottom: 1.385em; }
+table.spip caption,
+table.spip th,
+table.spip td  { padding: 0.375em; }
+table.spip caption { font-weight: bold; text-align: left; border-bottom: 2px solid; }
+table.spip th { font-weight: bold; }
+table.spip th, table.spip td { border-bottom: 1px solid; }
+table.spip thead th { vertical-align: bottom; }
+/* en responsive,  lineariser le tableau pour eviter les scrolls */
+@media (max-width: 640px) {
+	table.spip th,
+	table.spip tr,
+	table.spip td { display: block; }
+	table.spip thead th { border-bottom: none !important; }
+	table.spip thead th+th { border-top: none; }
+	table.spip tr { border-bottom: 1px solid; }
+	table.spip td { border-bottom: none; }
+}
 
 /* page message */
 .message #droite .button.delete { background-color: #ff4136; color: #fff; text-decoration: none; }
