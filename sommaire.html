@@ -71,6 +71,13 @@
 				layer.setIcon(L.divIcon({ html: '<div><span>' + ((childCount == 1) ? '' : childCount) + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) }));
 			};
 		});
+		[(#ENV{inscription}|oui)
+		$('.grid.login .one-third').hide(function(){
+			$('#charger_pave_inscription').show(function(){
+				$('html,body').scrollTop($(this).offset().top);
+			});
+		});
+		]
 	});
 })(jQuery);
 /*]]>*/
