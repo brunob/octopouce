@@ -38,3 +38,40 @@ function filtre_bouton_action_dist($libelle, $url, $class="", $confirm="", $titl
 	return "<form class='bouton_action_post$ajax' method='post' action='$url'><div>".form_hidden($url)
 		."<button type='submit' class='submit btn $class'$title$onclick>$libelle</button></div></form>";
 }
+
+/**
+ * Générer le texte des notifications (seenthis/seenthis_notifier)
+ * Ajouter la super mention "cliquez sur ce lien" avant le lien...
+ *
+ * @param int $id_parent
+ * @param int $id_me
+ * @return string le texte du message
+ */
+function notifier_construire_texte($id_parent, $id_me) {
+	if (!$id_parent) $id_parent = $id_me;
+	$conversation = sql_allfetsel("id_me, id_auteur", "spip_me", "(id_me=$id_parent OR id_parent=$id_parent) AND statut='publi' AND id_me <= $id_me ORDER BY date");
+
+	$max = 5;
+	if (count($conversation) <= $max + 3)
+		$max = 10000;
+
+	$blabla = "\n(... " . (count($conversation) - $max - 1) . " messages...)\n\n";
+	$ret = '';
+	foreach ($conversation as $i => $row) {
+		if ($i == 0 OR $i >= count($conversation) - $max) {
+			$nom_auteur = nom_auteur($row["id_auteur"]);
+			$id_c = $row["id_me"];
+			$texte = texte_de_me($id_c);
+			$ret .= ($id_c == $id_me)
+				? "\n$nom_auteur " . message_texte(($texte)) . "\n\n"
+				: seenthis_email_quote( $nom_auteur . ' ' . trim(extraire_titre($texte)) )
+					. "\n> ---------\n";
+		} else {
+			$ret .= $blabla;
+			$blabla = '';
+		}
+	}
+
+	return $ret ."\n". _T('octopouce:notification_prelien');
+
+}

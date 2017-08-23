@@ -40,6 +40,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'message_bienvenue' => 'Bienvenue sur Octopouce.net',
 	'message_connecter' => 'Je suis déjà poulpe, je souhaite accéder à mon espace de discussion.',
 	
+	'notification_prelien' => 'Pour répondre à ce message cliquez sur ce lien :',
+	
 	'profil_adresse_code_postal' => 'Code postal',
 	'profil_adresse_ville' => 'Ville',
 	'profil_adresse_voie' => 'N° & voie, lieu-dit',
