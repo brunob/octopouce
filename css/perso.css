@@ -179,7 +179,7 @@ p > .diff-para-supprime { display: block; }
 .formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche):not(.formulaire_profil) input.submit { padding: 3px 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; border: 0; border-radius: 6px; }
 
 .formulaire_profil .editer-groupe .editer input.date,
-.formulaire_inscription .editer-groupe .editer input.date,
+.formulaire_inscription .editer-groupe .editer #champ_date_naissance,
 .formulaire_inscription .editer-groupe .editer input.ui-autocomplete-input { display: inline-block; position: initial; }
 .formulaire_inscription .editer-groupe .editer input.date { width: 110px; box-sizing: border-box; }
 .formulaire_inscription .editer-groupe .editer.saisie_case label { display: inline; }
