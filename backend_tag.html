@@ -1,0 +1,34 @@
+#CACHE{60*5}
+[(#HTTP_HEADER{Content-type: text/xml[; charset=(#CHARSET)]})]<?xml 
+version="1.0"[ encoding="(#CHARSET)"]?>
+
+[(#REM) visiteur non connecté, oust ! ][(#SESSION{id_auteur}|sinon_interdire_acces{#URL_SITE_SPIP,401})]
+
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:thr='http://purl.org/syndication/thread/1.0' >
+	<title>[(#TAG|cdata)] - Seenthis</title>
+
+	<link href="[(#URL_TAG|url_absolue)]" />
+        <id>[(#URL_TAG|url_absolue)]</id>
+        <updated>[(#DATE|date_iso)]</updated>
+        <link rel="self" href="[(#SELF|url_absolue)]" />
+
+#SET{parents,#ARRAY}
+<BOUCLE_tag(ME me_tags)
+	{tag==(#TAG*|substr{1}|explode{'_'}|implode{'|'})}
+	{class=#}
+	{statut=publi}
+	{!par date}
+	{0,1000}
+>[(#SET{parents,
+[(#GET{parents}|push{[(#ID_PARENT|>{0}|?{#ID_PARENT,#ID_ME})]})]})]</BOUCLE_tag>
+
+<BOUCLE_messages(ME)
+	{id_me IN #GET{parents}}
+	{statut=publi}
+	{follow #ENV{follow,all}}
+	{!par date}
+	{0,40}
+>
+	[(#ID_ME|microcache{noisettes/atom/atom_me}|replace{"<entry.*>","<entry>"})]
+</BOUCLE_messages>
+</feed>
