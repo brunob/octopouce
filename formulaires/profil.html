@@ -29,7 +29,8 @@
 					label=<:octopouce:profil_date_naissance:>,
 					obligatoire=oui,
 					info_obligatoire="",
-					class="date_naissance"})]
+					class="date_naissance",
+					placeholder="jj/mm/aaaa"})]
 				[(#SAISIE{input,adresse_voie,
 					label=<:octopouce:profil_adresse_voie:>,
 					obligatoire=oui,
@@ -166,5 +167,11 @@
 			}
 			return false;
 		}
+		$('#champ_date_naissance').on('datePickerLoaded', function(){
+			$(this).datepicker('option',{
+				showOn: 'both',
+				defaultDate: '-30y'
+			});
+		});
 	</script>
 </div>
