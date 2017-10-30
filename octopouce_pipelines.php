@@ -16,6 +16,20 @@ function octopouce_insert_head($flux){
 }
 
 /**
+ * Insertion dans le pipeline post_insertion (SPIP)
+ * Lors de la création d'un auteur, le faire suivre le compte octopouce
+ *
+ * @pipeline post_insertion
+ * @param array $flux Données du pipeline
+ * @return array      Données du pipeline
+ */
+function octopouce_post_insertion($flux){
+	if ($flux['args']['table'] == 'spip_auteurs') {
+		sql_insertq("spip_me_follow", array("id_follow" => $flux['args']['id_objet'], "id_auteur" => _OCTOPOUCE_AUTEUR, "date" => "NOW()"));
+	}
+}
+
+/**
  * Insertion dans le pipeline pre_edition (SPIP)
  * Ajouter les valeurs des extras lors de la soumission des forms inscription & profil
  *
