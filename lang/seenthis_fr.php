@@ -52,6 +52,16 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'modifier' => 'modifier',
 	'montrer_messages' => 'montrer les @total@ messages',
 
+	// N
+	'notif_me_nouveau' => '@nom_auteur@ a posté un nouveau pouit',
+	'notif_me_reponse' => '@nom_auteur@ a répondu à un de ses pouits',
+	'notif_me_reponse_a' => '@nom_auteur@ a répondu à un pouit de @nom_auteur_init@',
+	'notif_message_footer' => "\n\n---------\nPour ne plus recevoir d’alertes de @seenthis@,\nvous pouvez régler vos préférences dans votre profil\n@url@\n\n",
+	'notif_partage_titre' => '@nom_aut_partage@ (@@login_aut_partage@) a partagé un de vos pouits sur @seenthis@.',
+	'notif_partage_texte' => "Bonjour @nom_dest@,\n\n@nom_aut_partage@ (@@login_aut_partage@) a partagé un de vos pouits sur @seenthis@.",
+	'notif_suivremoi_titre' => '@nom_aut@ (@@login_aut@) vous suit sur @seenthis@.',
+	'notif_suivremoi_texte' => "Bonjour @nom_dest@,\n\n@nom_aut@ (@@login_aut@) vous suit sur @seenthis@.",
+
 	// P
 	'pave_accueil' => 'Octopouce.net est un réseau citoyen de covoiturage sur la presqu’île de Crozon. Venez rejoindre le réseau, devenez poulpe. Inscrivez-vous, c’est gratuit, sécurisant et sympa !',
 	'people' => 'poulpes',
