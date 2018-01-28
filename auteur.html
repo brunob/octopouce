@@ -78,8 +78,10 @@
 				</B_messages>
 				
 				[(#SESSION{id_auteur}|=={#ID_AUTEUR}|oui)
-				<div class="onglets">
-					<a href="#URL_AUTEUR/only"><:octopouce:lien_messages_only:></a>
+				<div class="limite_date">
+					<a href="#URL_AUTEUR"[(#ENV{variante}|=={''}|et{#ENV{all}|non})class="actif"]><:octopouce:lien_messages_rezo:></a> | 
+					<a href="#URL_AUTEUR/only"[(#ENV{variante}|=={only}|oui)class="actif"]><:octopouce:lien_messages_only:></a> | 
+					<a href="[(#URL_AUTEUR|parametre_url{all,oui})]"[(#ENV{all}|oui)class="actif"]><:octopouce:lien_messages_all:></a>
 				</div>]
 				
 			[(#ENV{all}|oui)
