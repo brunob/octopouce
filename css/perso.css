@@ -237,6 +237,8 @@ p > .diff-para-supprime { display: block; }
 		}
 	}
 }
+#pagination_haut,
+#pagination_bas { background: transparent; }
 
 /*!
  * # Semantic UI 1.12.3 - Table
