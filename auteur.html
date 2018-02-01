@@ -84,10 +84,12 @@
 					<a href="[(#URL_AUTEUR|parametre_url{all,oui})]"[(#ENV{all}|oui)class="actif"]><:octopouce:lien_messages_all:></a>
 				</div>]
 				
+			[(#ENV{variante}|=={''}|et{#ENV{all}|non})
+			<INCLURE{fond=noisettes/contenu/contenu_accueil}{id=#ID_AUTEUR}{env}/>]
+			[(#ENV{variante}|=={only}|oui)
+			<INCLURE{fond=noisettes/contenu/contenu_auteur}{id=#ID_AUTEUR}{env}/>]
 			[(#ENV{all}|oui)
 			<INCLURE{fond=noisettes/contenu/contenu_accueil}{id=#ID_AUTEUR}{follow=all}{env}/>]
-			[(#ENV{all}|non)
-			<INCLURE{fond=noisettes/contenu/contenu_auteur}{id=#ID_AUTEUR}{env}/>]
 			</div>
 		</div>
 
