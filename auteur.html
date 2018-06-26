@@ -25,7 +25,11 @@
 		<div id="centre">
 			[(#SESSION{id_auteur}|=={#ID_AUTEUR}|oui)
 			<div id="tetiere">
-				[<div class="formulaire_principal">(#FORMULAIRE_POSTER_MESSAGE)</div>]
+				[<div class="formulaire_principal">
+					[(#SESSION{webmestre}|=={oui}|oui)
+					[(#FORMULAIRE_GENERER_POUIT)]]
+					(#FORMULAIRE_POSTER_MESSAGE)
+				</div>]
 			</div>]
 			<BOUCLE_block(spip_me_block){id_block=#ID_AUTEUR}{id_auteur=#SESSION{id_auteur}}>#SET{block,oui}</BOUCLE_block>
 			<BOUCLE_contact(AUTEURS){si #SESSION{id_auteur}|et{#SESSION{id_auteur}|!={#ID_AUTEUR}}|et{#GET{block}|non}}{tout}{id_auteur}>
