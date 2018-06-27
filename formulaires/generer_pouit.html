@@ -1,44 +1,55 @@
 <div class="formulaire_spip formulaire_generer_pouit">
 	<div class="editer-groupe">
+		<h3 class="legend"><:octopouce:legend_generer_pouit:></h3>
 		<div class="editer editer_type_message">
+			<label for="type_message"><:octopouce:label_type_message:></label>
 			<select name="type_message" id="type_message">
-				<option value=""><:octopouce:label_type_message:></option>
-				<option value="#propose"><:octopouce:label_type_message_propose:></option>
-				<option value="#recherche"><:octopouce:label_type_message_recherche:></option>
+				<option value=""></option>
+				<option value="#conducteur"><:octopouce:label_type_message_propose:></option>
+				<option value="#passager"><:octopouce:label_type_message_recherche:></option>
 			</select>
 		</div>
 		<div class="editer editer_depart">
+			<label for="depart"><:octopouce:label_depart:></label>
 			<select name="depart" id="depart">
-				<option value=""><:octopouce:label_depart:></option>
+				<option value=""></option>
 				<BOUCLE_depart(GIS){type=Point}{par titre}>
 				<option value="#TITRE">[(#TITRE|substr{1})]</option>
 				</BOUCLE_depart>
 			</select>
 		</div>
 		<div class="editer editer_arrivee">
+			<label for="depart"><:octopouce:label_arrivee:></label>
 			<select name="arrivee" id="arrivee">
-				<option value=""><:octopouce:label_arrivee:></option>
+				<option value=""></option>
 				<BOUCLE_arrivee(GIS){type=Point}{par titre}>
 				<option value="[(#TITRE|substr{1})]">[(#TITRE|substr{1})]</option>
 				</BOUCLE_arrivee>
 			</select>
 		</div>
-		[(#SAISIE{date,date,placeholder="jj/mm/aaaa"})]
+		[(#SAISIE{date,date,
+			label=<:octopouce:label_date:>,
+			horaire=oui})]
 	</div>
 	<script type="text/javascript">
 	/*<![CDATA[*/
 	;(function($){
 		$(function(){
-			$('.formulaire_generer_pouit select, .formulaire_generer_pouit #champ_date').on('change', function(){
+			$('.formulaire_generer_pouit select, .formulaire_generer_pouit .editer_date input').on('change', function(){
 				var message = '';
-				message += $('#type_message').val() + ' ';
-				message += $('#depart').val() + '_';
+				message += 'je suis ' + $('#type_message').val() + '\n\n';
+				message += 'je souhaite faire le trajet : ' + $('#depart').val() + '_';
 				message += $('#arrivee').val();
-				message += ' le #' + $('.formulaire_generer_pouit #champ_date').val();
+				message += '\n\nle #' + $('.formulaire_generer_pouit #champ_date_date').val();
+				var heure = $('.formulaire_generer_pouit #champ_date_heure').val();
+				if (heure != '') {
+					message += '_' + $('.formulaire_generer_pouit #champ_date_heure').val();
+				}
 				$('.formulaire_poster_message textarea').val(message);
 				$('#tetiere .formulaire_poster_message').addClass('focus');
+				$('#tetiere .formulaire_poster_message textarea').attr('rows','5');
 			});
-			$('#champ_date').on('datePickerLoaded', function(){
+			$('#champ_date_date').on('datePickerLoaded', function(){
 				$(this).datepicker('option',{
 					showOn: 'both'
 				});
