@@ -83,18 +83,18 @@
 				
 				[(#SESSION{id_auteur}|=={#ID_AUTEUR}|oui)
 				<div class="limite_date">
-					<a href="#URL_AUTEUR"[(#ENV{variante}|=={''}|et{#ENV{all}|non})class="actif"]><:octopouce:lien_messages_rezo:></a> | 
-					<a href="#URL_AUTEUR/only"[(#ENV{variante}|=={only}|oui)class="actif"]><:octopouce:lien_messages_only:></a> | 
-					<a href="[(#URL_AUTEUR|parametre_url{all,oui})]"[(#ENV{all}|oui)class="actif"]><:octopouce:lien_messages_all:></a>
+					<a href="#URL_AUTEUR"[(#ENV{variante}|=={''}|et{#ENV{rezo}|non})class="actif"]><:octopouce:lien_messages_all:></a> | 
+					<a href="[(#URL_AUTEUR|parametre_url{rezo,oui})]"[(#ENV{rezo}|oui)class="actif"]><:octopouce:lien_messages_rezo:></a> | 
+					<a href="#URL_AUTEUR/only"[(#ENV{variante}|=={only}|oui)class="actif"]><:octopouce:lien_messages_only:></a>
 				</div>]
 			
 			[(#SESSION{id_auteur}|=={#ID_AUTEUR}|oui)
-			[(#ENV{variante}|=={''}|et{#ENV{all}|non})
-			<INCLURE{fond=noisettes/contenu/contenu_accueil}{id=#ID_AUTEUR}{env}/>]
+			[(#ENV{variante}|=={''}|et{#ENV{rezo}|non})
+			<INCLURE{fond=noisettes/contenu/contenu_accueil}{id=#ID_AUTEUR}{follow=all}{env}/>]
 			[(#ENV{variante}|=={only}|oui)
 			<INCLURE{fond=noisettes/contenu/contenu_auteur}{id=#ID_AUTEUR}{env}/>]
-			[(#ENV{all}|oui)
-			<INCLURE{fond=noisettes/contenu/contenu_accueil}{id=#ID_AUTEUR}{follow=all}{env}/>]
+			[(#ENV{rezo}|oui)
+			<INCLURE{fond=noisettes/contenu/contenu_accueil}{id=#ID_AUTEUR}{env}/>]
 			][(#SESSION{id_auteur}|=={#ID_AUTEUR}|non)
 			<INCLURE{fond=noisettes/contenu/contenu_auteur}{id=#ID_AUTEUR}{env}/>
 			]
