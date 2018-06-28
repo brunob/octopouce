@@ -45,9 +45,8 @@
 				if (heure != '') {
 					message += '_' + heure;
 				}
-				$('.formulaire_poster_message textarea').val(message);
+				$('#tetiere .formulaire_poster_message textarea').attr('rows','3').val(message);
 				$('#tetiere .formulaire_poster_message').addClass('focus');
-				$('#tetiere .formulaire_poster_message textarea').attr('rows','3');
 			});
 			$('#champ_date_date').on('datePickerLoaded', function(){
 				$(this).datepicker('option',{
