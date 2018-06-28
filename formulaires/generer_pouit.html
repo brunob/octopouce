@@ -36,12 +36,19 @@
 	;(function($){
 		$(function(){
 			$('.formulaire_generer_pouit select, .formulaire_generer_pouit .editer_date input').on('change', function(){
-				var message = '';
-				message += 'je suis ' + $('#type_message').val() + '\n';
-				message += 'je souhaite faire le trajet : ' + $('#depart').val() + '_';
+				var message = '',
+					type_message = $('#type_message').val(),
+					intro_trajet = '',
+					heure = $('.formulaire_generer_pouit #champ_date_heure').val().replace(':','h');
+				message += 'je suis ' + type_message + '\n';
+				if (type_message == '#passager') {
+					intro_trajet = 'je souhaite faire le trajet : ';
+				} else if (type_message == '#conducteur') {
+					intro_trajet = 'je fais le trajet : ';
+				}
+				message += intro_trajet + $('#depart').val() + '_';
 				message += $('#arrivee').val();
 				message += '\nle #' + $('.formulaire_generer_pouit #champ_date_date').val();
-				var heure = $('.formulaire_generer_pouit #champ_date_heure').val().replace(':','h');
 				if (heure != '') {
 					message += '_' + heure;
 				}
