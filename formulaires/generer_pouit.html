@@ -37,13 +37,13 @@
 		$(function(){
 			$('.formulaire_generer_pouit select, .formulaire_generer_pouit .editer_date input').on('change', function(){
 				var message = '';
-				message += 'je suis ' + $('#type_message').val() + '\n\n';
+				message += 'je suis ' + $('#type_message').val() + '\n';
 				message += 'je souhaite faire le trajet : ' + $('#depart').val() + '_';
 				message += $('#arrivee').val();
-				message += '\n\nle #' + $('.formulaire_generer_pouit #champ_date_date').val();
-				var heure = $('.formulaire_generer_pouit #champ_date_heure').val();
+				message += '\nle #' + $('.formulaire_generer_pouit #champ_date_date').val();
+				var heure = $('.formulaire_generer_pouit #champ_date_heure').val().replace(':','h');
 				if (heure != '') {
-					message += '_' + $('.formulaire_generer_pouit #champ_date_heure').val();
+					message += '_' + heure;
 				}
 				$('.formulaire_poster_message textarea').val(message);
 				$('#tetiere .formulaire_poster_message').addClass('focus');
