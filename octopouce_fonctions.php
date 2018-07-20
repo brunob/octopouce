@@ -75,3 +75,87 @@ function notifier_construire_texte($id_parent, $id_me) {
 	return $ret ."\n". _T('octopouce:notification_prelien');
 
 }
+
+/**
+ * seenthisrecherche -> tableau
+ * @param string $u "env"
+ * @return array|bool
+ */
+function inc_seenthisrecherche_to_array($u) {
+	if (!$env = @unserialize($u))
+		return false;
+	$follow = strval(@$env['follow']);
+
+	# valeur maximum de la pagination sur cette boucle DATA
+	$max_pagination = 100;
+
+	$debut = intval($env['debut_messages']);
+
+	$moi = intval($GLOBALS['visiteur_session']['id_auteur']);
+
+	$where = array();
+	
+	$auteurs_bloques = auteurs_bloques($moi);
+
+	if (count($auteurs_bloques)) {
+		$where[] = sql_in('m.id_auteur', $auteurs_bloques, 'NOT');
+	}
+
+	# fulltext
+	$key = "`texte`";
+	// construire la chaine de recherche, on souhaite tous les tags demandés
+	$r = '';
+	if ($env['type_message']) {
+		$r .= '+' . $env['type_message'];
+	}
+	// depart & arrivee => chercher l'expression exacte
+	// depart uniquement => depart_*
+	// arrivee uniquement => *_arrivee
+	if ($env['depart'] and $env['arrivee']) {
+		$r .= ' +"' . $env['depart'] . '_' . $env['arrivee'] . '"';
+	} elseif ($env['depart'] and !$env['arrivee']) {
+		$r .= ' +' . $env['depart'] . '_*';
+	} elseif (!$env['depart'] and $env['arrivee']) {
+		$r .= ' +' . $env['arrivee'];
+	}
+	// on quote la date pour chercher l'expression exacte
+	if ($env['quand']['date']) {
+		$r .= ' +"' . $env['quand']['date'] . '"';
+	}
+	// et l'heure au format xxhxx pour finir
+	if ($env['quand']['heure']) {
+		$r .= ' +"' . str_replace(':', 'h', $env['quand']['heure']) . '"';
+	}
+	
+	// il faut tout placer entre quotes, ou au moins la date et le trajet !
+
+	// On utilise la translitteration pour contourner le pb des bases
+	// declarees en iso-latin mais remplies d'utf8
+	if (($r2 = translitteration($r)) != $r)
+		$r .= ' '.$r2;
+
+	$p = sql_quote(trim("$r"));
+
+	// toujours en mode booleen
+	$val = $match = "MATCH(r.$key) AGAINST ($p IN BOOLEAN MODE)";
+
+	$where[] = "($match) > 0";
+	$where[] = "m.statut='publi'";
+
+	$res = sql_allfetsel("SQL_CALC_FOUND_ROWS r.id_me AS id, m.date, $val AS score", "spip_me_recherche AS r INNER JOIN spip_me AS m ON r.id_me=m.id_me", $where, null, 'score DESC'
+	, "$debut,$max_pagination"
+	);
+
+	$t = sql_fetch(sql_query("SELECT FOUND_ROWS() as total"));
+	# remplir avant debut, avec du vide
+	for ($i=0; $i< $debut; $i++) {
+		array_unshift($res, 0);
+	}
+	# remplir apres fin, avec du vide
+	$grand_total = min(2000, intval($t['total']));
+	for ($i=count($res); $i < $grand_total; $i++) {
+		array_push($res, 0);
+	}
+
+	return $res;
+}

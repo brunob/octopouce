@@ -29,6 +29,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_type_message' => 'Je suis',
 	'label_type_message_propose' => 'conducteur',
 	'label_type_message_recherche' => 'passager',
+	'label_type_recherche' => 'Je cherche un',
 	'legend_generer_pouit' => 'Ce formulaire permet d’écrire un beau pouit',
 	'lettre_adhesion_mention' => 'Document édité le : @date@ via www.octopouce.net',
 	'lien_adherer' => 'Adhérer',

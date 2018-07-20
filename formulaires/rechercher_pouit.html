@@ -1,0 +1,60 @@
+<div class="formulaire_spip formulaire_generer_pouit formulaire_rechercher_pouit">
+<form action="#ENV{action}" method="get">
+	<div class="editer-groupe">
+		[(#ENV{action}|form_hidden)]
+		<div class="editer editer_type_message">
+			<label for="type_message"><:octopouce:label_type_recherche:></label>
+			<select name="type_message" id="type_message">
+				<option value=""></option>
+				<option value="conducteur"[(#ENV{type_message}|=={conducteur}|oui)selected="selected"]><:octopouce:label_type_message_propose:></option>
+				<option value="passager"[(#ENV{type_message}|=={passager}|oui)selected="selected"]><:octopouce:label_type_message_recherche:></option>
+			</select>
+		</div>
+		<div class="editer editer_depart">
+			<label for="depart"><:octopouce:label_depart:></label>
+			<select name="depart" id="depart">
+				<option value=""></option>
+				<BOUCLE_depart(GIS){type=Point}{par titre}>
+				<option value="[(#TITRE|substr{1})]"[(#ENV{depart}|=={#TITRE|substr{1}}|oui)selected="selected"]>[(#TITRE|substr{1})]</option>
+				</BOUCLE_depart>
+			</select>
+		</div>
+		<div class="editer editer_arrivee">
+			<label for="arrivee"><:octopouce:label_arrivee:></label>
+			<select name="arrivee" id="arrivee">
+				<option value=""></option>
+				<BOUCLE_arrivee(GIS){type=Point}{par titre}>
+				<option value="[(#TITRE|substr{1})]"[(#ENV{arrivee}|=={#TITRE|substr{1}}|oui)selected="selected"]>[(#TITRE|substr{1})]</option>
+				</BOUCLE_arrivee>
+			</select>
+		</div>
+		[(#SAISIE{date,quand,
+			label=<:octopouce:label_date:>,
+			horaire=oui})]
+		<p class="boutons">
+			<input type="submit" class="submit" value="<:info_rechercher:>" title="<:info_rechercher:>" />
+		</p>
+	</div>
+	<script type="text/javascript">
+	/*<![CDATA[*/
+	;(function($){
+		$(function(){
+			$('#champ_quand_date').on('datePickerLoaded', function(){
+				$(this).datepicker('option',{
+					showOn: 'both'
+				});
+			});
+		});
+	})(jQuery);
+	/*]]>*/
+	</script>
+	<!--
+		<head inserer_saisie_editer saisie_date
+		Fourberie, pour contourner la boulette de rasta... 
+		http://article.gmane.org/gmane.comp.web.spip.zone/40582/
+		http://article.gmane.org/gmane.comp.web.spip.zone/40739
+	-->
+	[(#REM) encore un truc crado pour saisies qui n'insère pas ces css au retour ajax d'un formulaire ]
+	<link rel="stylesheet" href="#CHEMIN{css/ui/datepicker.css}" type="text/css" />
+</form>
+</div>
