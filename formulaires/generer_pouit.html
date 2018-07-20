@@ -27,7 +27,7 @@
 				</BOUCLE_arrivee>
 			</select>
 		</div>
-		[(#SAISIE{date,date,
+		[(#SAISIE{date,quand,
 			label=<:octopouce:label_date:>,
 			horaire=oui})]
 	</div>
@@ -35,11 +35,11 @@
 	/*<![CDATA[*/
 	;(function($){
 		$(function(){
-			$('.formulaire_generer_pouit select, .formulaire_generer_pouit .editer_date input').on('change', function(){
+			$('.formulaire_generer_pouit select, .formulaire_generer_pouit .editer_quand input').on('change', function(){
 				var message = '',
 					type_message = $('#type_message').val(),
 					intro_trajet = '',
-					heure = $('.formulaire_generer_pouit #champ_date_heure').val().replace(':','h');
+					heure = $('.formulaire_generer_pouit #champ_quand_heure').val().replace(':','h');
 				message += 'je suis ' + type_message + '\n';
 				if (type_message == '#passager') {
 					intro_trajet = 'je souhaite faire le trajet : ';
@@ -48,14 +48,14 @@
 				}
 				message += intro_trajet + $('#depart').val() + '_';
 				message += $('#arrivee').val();
-				message += '\nle #' + $('.formulaire_generer_pouit #champ_date_date').val();
+				message += '\nle #' + $('.formulaire_generer_pouit #champ_quand_date').val();
 				if (heure != '') {
-					message += '_' + heure;
+					message += ' à ' + heure;
 				}
 				$('#tetiere .formulaire_poster_message textarea').attr('rows','3').val(message);
 				$('#tetiere .formulaire_poster_message').addClass('focus');
 			});
-			$('#champ_date_date').on('datePickerLoaded', function(){
+			$('#champ_quand_date').on('datePickerLoaded', function(){
 				$(this).datepicker('option',{
 					showOn: 'both'
 				});

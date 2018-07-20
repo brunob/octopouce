@@ -21,6 +21,7 @@ body { color: #000; }
 .container { max-width: 960px; margin: 0 auto; }
 
 nav#entete { z-index: 1001; }
+nav#entete .recherche { float: left; }
 
 #entete_people .outils { width: 245px; }
 
@@ -179,7 +180,7 @@ p > .diff-para-supprime { display: block; }
 .formulaire_spip:not(.formulaire_poster_message):not(.formulaire_inscription):not(.formulaire_recherche):not(.formulaire_profil) input.submit { padding: 3px 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; border: 0; border-radius: 6px; }
 
 .formulaire_profil .editer-groupe .editer input.date,
-.formulaire_generer_pouit .editer-groupe .editer #champ_date_date,
+.formulaire_generer_pouit .editer-groupe .editer #champ_quand_date,
 .formulaire_inscription .editer-groupe .editer #champ_date_naissance,
 .formulaire_inscription .editer-groupe .editer input.ui-autocomplete-input { display: inline-block; position: initial; }
 .formulaire_inscription .editer-groupe .editer input.date { width: 110px; box-sizing: border-box; }
@@ -192,7 +193,9 @@ p > .diff-para-supprime { display: block; }
 .formulaire_generer_pouit label { font-size: 0.9em; }
 .formulaire_generer_pouit .editer_depart,
 .formulaire_generer_pouit .editer_arrivee { display: inline-block; }
-.formulaire_generer_pouit #champ_date_heure { width: 3.5em; }
+.formulaire_generer_pouit #champ_quand_heure { width: 3.5em; }
+
+.formulaire_rechercher_pouit { max-width: 580px; padding: 15px 40px 20px 40px; background: #e5e5e5; }
 
 .formulaire_ecrire_auteur { margin-bottom: 0.5em; }
 .formulaire_ecrire_auteur legend { display: none; }
