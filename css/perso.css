@@ -190,12 +190,18 @@ p > .diff-para-supprime { display: block; }
 
 .formulaire_generer_pouit { margin-bottom: 8px; }
 .formulaire_generer_pouit .legend { margin-bottom: 8px; font-size: 0.9em; font-weight: normal; color: #fc3f93; }
-.formulaire_generer_pouit label { font-size: 0.9em; }
+.formulaire_generer_pouit label { display: inline-block; min-width: 46px; font-size: 0.9em; }
 .formulaire_generer_pouit .editer_depart,
 .formulaire_generer_pouit .editer_arrivee { display: inline-block; }
 .formulaire_generer_pouit #champ_quand_heure { width: 3.5em; }
 
 .formulaire_rechercher_pouit { max-width: 580px; padding: 15px 40px 20px 40px; background: #e5e5e5; }
+.formulaire_rechercher_pouit label { min-width: 90px; }
+.formulaire_rechercher_pouit .editer_depart,
+.formulaire_rechercher_pouit .editer_arrivee { display: block; }
+.formulaire_rechercher_pouit p.boutons { margin-top: 5px; text-align: right; }
+.formulaire_rechercher_pouit p.boutons input[type=submit] { background-color: #666; color: white; border: 0px; padding: 3px 14px; border-radius: 4px; font-size: 0.8em; }
+.formulaire_rechercher_pouit p.boutons input[type=submit]:hover { background-color: #555; }
 
 .formulaire_ecrire_auteur { margin-bottom: 0.5em; }
 .formulaire_ecrire_auteur legend { display: none; }
