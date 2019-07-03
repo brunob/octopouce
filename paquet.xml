@@ -3,7 +3,7 @@
 	categorie="squelette"
 	version="1.0.1"
 	etat="stable"
-	compatibilite="[3.0.0;3.1.*]"
+	compatibilite="[3.2.0;3.2.*]"
 	logo="imgs/logo-auteur.png"
 	schema="1.0.0"
 >
@@ -26,7 +26,6 @@
 	<necessite nom="qrcode" compatibilite="[1.1.1;]" />
 
 	<pipeline nom="declarer_champs_extras" inclure="base/octopouce.php" />
-	<pipeline nom="insert_head" inclure="octopouce_pipelines.php" />
 	<pipeline nom="post_insertion" inclure="octopouce_pipelines.php" />
 	<pipeline nom="pre_edition" inclure="octopouce_pipelines.php" />
 	<pipeline nom="formulaire_charger" inclure="octopouce_pipelines.php" />

@@ -3,19 +3,6 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
 /**
- * Insertion dans le pipeline insert_head (SPIP)
- * Ajouter les scripts nécessaires au projet au head des pages
- *
- * @pipeline insert_head
- * @param array $flux Données du pipeline
- * @return array      Données du pipeline
- */
-function octopouce_insert_head($flux){
-	$flux .="\n".'<script type="text/javascript" src="'. find_in_path('javascript/jquery.tooltipster.js') .'"></script>';
-	return $flux;
-}
-
-/**
  * Insertion dans le pipeline post_insertion (SPIP)
  * Lors de la création d'un auteur, le faire suivre le compte octopouce
  *

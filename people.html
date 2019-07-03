@@ -63,15 +63,21 @@
 							ajaxReload('centre', {args: {id_commune: e.popup._source.feature.id, debut_tous: 0}, history: true});
 						});
 					});
-					$('.poulpes .logo_auteur').tooltipster({
-						trigger: 'hover',
-						content: null,
-						theme: 'tooltipster-shadow',
-						functionInit: function(origin, content) {
-							if($(origin).next('.bio').html())
-								return $(origin).next('.bio');
-						}
-					});
+					var init_tooltip = function() {
+						$('.poulpes .logo_auteur').tooltip({
+							position: {
+								my: 'center bottom',
+								at: 'center top-15'
+							},
+							content: function() {
+								if($(this).parent().next('.bio').html()) {
+									return $(this).parent().next('.bio').html();
+								}
+							}
+						});
+					}
+					init_tooltip();
+					onAjaxLoad(init_tooltip);
 				});
 			})(jQuery);
 			/*]]>*/
