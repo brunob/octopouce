@@ -18,6 +18,6 @@ function autoriser_ecrire($faire, $type, $id, $qui, $opt) {
 $GLOBALS['url_arbo_types'] = array(
 	'mot' => 'tag',
 	'auteur' => 'poulpes',
-	'message' => 'pouits',
+	'me' => 'pouits',
 	'site' => 'sites'
 );
