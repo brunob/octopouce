@@ -1,7 +1,7 @@
 <paquet
 	prefix="octopouce"
 	categorie="squelette"
-	version="1.0.1"
+	version="1.0.2"
 	etat="stable"
 	compatibilite="[3.2.0;3.2.*]"
 	logo="imgs/logo-auteur.png"
@@ -15,7 +15,7 @@
 	<copyright>2016</copyright>
 	<licence>GPL v3</licence>
 	
-	<necessite nom="seenthis" compatibilite="[2.1.0;]" />
+	<necessite nom="seenthis" compatibilite="[2.3.3;]" />
 	<necessite nom="seenthissq" compatibilite="[1.0.4;]" />
 	<necessite nom="cextras" compatibilite="[3.7.0;]" />
 	<necessite nom="date_inscription" compatibilite="[0.1.2;]" />
