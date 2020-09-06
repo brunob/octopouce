@@ -24,7 +24,7 @@
 
 <INCLURE{fond=inc/entete}>
 
-<BOUCLE_intro(ARTICLES){id_rubrique=1}{par num titre}{0,1}{doublons}>
+<BOUCLE_intro(ARTICLES){id_rubrique=1}{par num titre}{0,1}>
 <div class="intro">
 	<div class="container">
 		<h1>#NOM_SITE_SPIP</h1>
@@ -36,7 +36,7 @@
 
 <div class="container raisons">
 	<ul class="articles">
-		<BOUCLE_raisons(ARTICLES){id_rubrique=1}{par num titre}{1,n-1}{doublons}>
+		<BOUCLE_raisons(ARTICLES){id_rubrique=1}{par num titre}{1,n-2}>
 		<li class="grid has-gutter">
 			<div class="two-thirds">
 				<h2>#TITRE</h2>
@@ -52,7 +52,7 @@
 <h3 class="divider"><:octopouce:titre_home_osons:></h3>
 <div class="container">
 	<ul class="articles">
-		<BOUCLE_loin(ARTICLES){id_rubrique=1}{par num titre}{doublons}>
+		<BOUCLE_loin(ARTICLES){id_rubrique=1}{par num titre}{n-1,1}>
 		<li class="grid has-gutter">
 			<div class="two-thirds">
 				<h2>#TITRE</h2>
