@@ -48,17 +48,23 @@ nav#entete .recherche { float: left; }
 .accueil h1,
 .accueil h2,
 .accueil h3 { font-family: fonarto; font-weight: normal; }
-.accueil .intro { padding: 35px 0 2em; text-align: center; background: #f9f9f9 url(img/bras.png) center 35px no-repeat; }
-.accueil .intro img { margin: 1em auto; }
-.accueil .intro h1 { font-size: 2.5em; }
-.accueil .intro .chapo { font-family: abel; font-size: 1.4em; }
-.accueil .grid { margin: 2em 0; text-align: center; }
-.accueil .grid li h2 { margin-bottom: 1em; color: #fc3f93; font-size: 1.2em; }
-.accueil .grid .chapo { font-size: 0.85em; line-height: 1.25; }
-.accueil .grid .suite { display: inline-block; margin-top: 1em; background: #fc3f93; padding: 0.5em 1em; color: #fff; text-decoration: none; }
-.accueil .divider { padding: 0.25em 0; text-align: center; background: #4d4d4d; color: #fff; font-family: abel; font-size: 2em; }
-.accueil .divider em { font-style: normal; color: #fc3f93; }
-.accueil #tous_messages { max-width: 660px; margin: 0 auto; }
+.accueil h1 { font-size: 4.5em; }
+.accueil h2 { font-size: 2.5em; }
+.accueil .chapo { font-size: 1.25em; line-height: 1.5; }
+.accueil .intro { padding: 35px 0 0; text-align: left; background: #fc3f93; color: #fff; }
+.accueil .intro .container { padding: 2em 0; background: transparent url(img/poulpe.png) right -15px no-repeat; }
+.accueil .intro h2 { font-size: 1.5em; font-family: inherit; margin-bottom: 1em; }
+.accueil .intro .chapo {font-weight: bold; }
+.accueil .articles li { margin: 2em 0; }
+.accueil .articles h2 { margin-bottom: 0.5em; }
+.accueil .articles .suite { display: inline-block; margin-top: 1em; background: #fc3f93; padding: 0.5em 1em; color: #fff; text-decoration: none; }
+.accueil .articles .logo img { display: block; margin: 0 auto; border-radius: 50%; }
+.accueil .divider { padding: 0.5em 0; text-align: center; background: #fc3f93; color: #fff; font-family: inherit; font-size: 2em; font-weight: bold; }
+.accueil .logos { text-align: center; padding: 3em 0; }
+.accueil .logos img { margin: 0 1em; }
+.accueil .logos a { text-decoration: none; }
+.accueil .partenaires { font-size: 1rem; }
+.accueil .footer { margin-top: 0; }
 
 /* page article */
 ul.spip,

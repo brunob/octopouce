@@ -24,86 +24,71 @@
 
 <INCLURE{fond=inc/entete}>
 
+<BOUCLE_intro(ARTICLES){id_rubrique=1}{par num titre}{0,1}{doublons}>
 <div class="intro">
 	<div class="container">
-		[(#LOGO_SITE_SPIP|image_reduire{200})]
-		<h1><:octopouce:message_bienvenue:></h1>
-		[<div class="chapo">(#DESCRIPTIF_SITE_SPIP)</div>]
+		<h1>#NOM_SITE_SPIP</h1>
+		<h2>#TITRE</h2>
+		[<div class="chapo">(#TEXTE)</div>]
 	</div>
 </div>
+</BOUCLE_intro>
 
-<div class="container">
-	<ul class="grid has-gutter alire">
-		<BOUCLE_alire(ARTICLES){id_rubrique=2}{par num titre}>
-		<li>
-			<h2>#TITRE</h2>
-			[<div class="chapo">(#CHAPO)</div>]
-			<a href="#URL_ARTICLE" class="suite">lire</a>
+<div class="container raisons">
+	<ul class="articles">
+		<BOUCLE_raisons(ARTICLES){id_rubrique=1}{par num titre}{1,n-1}{doublons}>
+		<li class="grid has-gutter">
+			<div class="two-thirds">
+				<h2>#TITRE</h2>
+				[<div class="chapo">(#CHAPO)</div>]
+				<a href="#URL_ARTICLE" class="suite">Lire la suite</a>
+			</div>
+			[<div class="one-third logo">(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{260})</div>]
 		</li>
-		</BOUCLE_alire>
+		</BOUCLE_raisons>
 	</ul>
 </div>
 
-<BOUCLE_total(AUTEURS){tout}{statut!=nouveau} />#SET{total,#GRAND_TOTAL}<//B_total>
-<h3 class="divider"><:octopouce:titre_home_rejoindre{nb=#GET{total}}:></h3>
-[(#INCLURE{fond=modeles/carte_gis,
-	id_map=_villes,
-	objets=auteurs,
-	zoom_wheel=non,
-	no_control=oui})]
-<script type="text/javascript">
-/*<![CDATA[*/
-;(function($){
-	$(function(){
-		$('#map_villes').on('load', function(){
-			this.map.setGeoJsonFeatureIcon = function (feature, layer) {
-				var childCount = feature.properties.count;
-				var c = ' marker-cluster-';
-				if (childCount == 1) {
-					c += 'dot';
-				} else if (childCount < 5) { // 100
-					c += 'small';
-				} else if (childCount < 10) { // 1000
-					c += 'medium';
-				} else {
-					c += 'large';
-				}
-				layer.setIcon(L.divIcon({ html: '<div><span>' + ((childCount == 1) ? '' : childCount) + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) }));
-			};
-		});
-		[(#ENV{inscription}|oui)
-		$('.grid.login .one-third').hide(function(){
-			$('#charger_pave_inscription').show(function(){
-				$('html,body').scrollTop($(this).offset().top);
-			});
-		});
-		]
-	});
-})(jQuery);
-/*]]>*/
-</script>
-
-[<div class="container">(#SESSION{id_auteur}|non)
-	<ul class="grid has-gutter login">
-		<li class="one-third push pull" id="charger_pave_inscription"></li>
-		<li class="one-third push">
-			<div class="chapo"><:octopouce:message_adherer:></div>
-			<a href="#" onclick="$('.grid.login .one-third').hide(function(){$('#charger_pave_inscription').slideDown();}); return false;" class="suite"><:octopouce:lien_adherer:></a>
-		</li>
-		<li class="one-third pull">
-			<div class="chapo"><:octopouce:message_connecter:></div>
-			<a href="#" onclick="$('#popupCachee, #popupAffichee').toggle(); return false;" class="suite"><:lien_connecter:></a>
-		</li>
-	</ul>
-</div>]
-
-<h3 class="divider"><:octopouce:titre_home_live:></h3>
-
+<h3 class="divider"><:octopouce:titre_home_osons:></h3>
 <div class="container">
-	<div id="tous_messages">
-		<INCLURE{fond=noisettes/contenu/contenu_auteur}{id=#EVAL{_OCTOPOUCE_AUTEUR}}{env}/>
+	<ul class="articles">
+		<BOUCLE_loin(ARTICLES){id_rubrique=1}{par num titre}{doublons}>
+		<li class="grid has-gutter">
+			<div class="two-thirds">
+				<h2>#TITRE</h2>
+				[<div class="chapo">(#CHAPO)</div>]
+				<a href="#URL_ARTICLE" class="suite">Lire la suite</a>
+			</div>
+			[<div class="one-third logo">(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{260})</div>]
+		</li>
+		</BOUCLE_loin>
+	</ul>
+	<iframe src="https://www.ouestgo.fr/communaute/widget/472" width="100%" height="440px" frameborder="0" scrolling="no"></iframe> 
+</div>
+
+<BOUCLE_autres(ARTICLES){page=autres}>
+<h3 class="divider">#TITRE</h3>
+<div class="container logos">
+	<BOUCLE_docs1(DOCUMENTS){id_article}{extension IN png,jpg,gif}{par rang_lien, num titre, date}>
+		[<a href="(#CREDITS*)"[ title="(#TITRE|attribut_html|couper{80})"] rel="nofollow noopener noreferrer external" target="_blanck">]
+			[(#FICHIER|image_reduire{0,60})]
+		[</a>(#CREDITS|oui)]
+	</BOUCLE_docs1>
+</div>
+</BOUCLE_autres>
+
+<BOUCLE_partenaires(ARTICLES){page=partenaires}>
+<div class="divider">
+	<h3>#TITRE</h3>
+	<div class="container logos partenaires">
+		<BOUCLE_docs2(DOCUMENTS){id_article}{extension IN png,jpg,gif}{par rang_lien, num titre, date}>
+			[<a href="(#CREDITS*)"[ title="(#TITRE|attribut_html|couper{80})"] rel="nofollow noopener noreferrer external" target="_blanck">]
+				[(#FICHIER|image_reduire{0,100})]
+			[</a>(#CREDITS|oui)]
+		</BOUCLE_docs2>
 	</div>
 </div>
+</BOUCLE_partenaires>
 
 <INCLURE{fond=inc/footer}>
 
