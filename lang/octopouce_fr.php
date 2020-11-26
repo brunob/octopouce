@@ -63,6 +63,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	'titre_editer_poulpe' => 'Modifier un compte utilisateur',
 	'titre_editer_poulpe_nouveau' => 'Nouveau compte utilisateur',
+	'titre_home_live' => 'Infos du réseau',
 	'titre_home_osons' => 'Osons le covoiturage de proximité',
 	'titre_octo_hasard' => 'Octo hasard (8 au hasard)',
 	'titre_page_people' => 'Tous les poulpes',

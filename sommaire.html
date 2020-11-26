@@ -35,36 +35,36 @@
 </BOUCLE_intro>
 
 <div class="container raisons">
-	<ul class="articles">
-		<BOUCLE_raisons(ARTICLES){id_rubrique=1}{par num titre}{1,n-2}>
-		<li class="grid has-gutter">
-			<div class="two-thirds">
-				<h2>#TITRE</h2>
-				[<div class="chapo">(#CHAPO)</div>]
-				<a href="#URL_ARTICLE" class="suite">Lire la suite</a>
-			</div>
-			[<div class="one-third logo">(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{260})</div>]
-		</li>
+	<div class="articles grid-2">
+		<BOUCLE_raisons(ARTICLES){id_rubrique=1}{par num titre}{1,n-3}>
+		[(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{543})]
+		[<div class="chapo">(#CHAPO)</div>]
+		<h2[(#LOGO_ARTICLE|non) class="invert"]><a href="#URL_ARTICLE">#TITRE</a></h2>
 		</BOUCLE_raisons>
-	</ul>
+		<BOUCLE_raisons2(ARTICLES){id_rubrique=1}{par num titre}{n-2,1}>
+		<h2><a href="#URL_ARTICLE">#TITRE</a></h2>
+		[<div class="chapo">(#CHAPO)</div>]
+		[(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{543})]
+		</BOUCLE_raisons2>
+	</div>
 </div>
 
-<h3 class="divider"><:octopouce:titre_home_osons:></h3>
+<h3 class="divider"><:octopouce:titre_home_live:></h3>
 <div class="container">
-	<ul class="articles">
-		<BOUCLE_loin(ARTICLES){id_rubrique=1}{par num titre}{n-1,1}>
-		<li class="grid has-gutter">
-			<div class="two-thirds">
-				<h2>#TITRE</h2>
-				[<div class="chapo">(#CHAPO)</div>]
-				<a href="#URL_ARTICLE" class="suite">Lire la suite</a>
-			</div>
-			[<div class="one-third logo">(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{260})</div>]
-		</li>
-		</BOUCLE_loin>
-	</ul>
-	<iframe src="https://www.ouestgo.fr/communaute/widget/472" width="100%" height="440px" frameborder="0" scrolling="no"></iframe> 
+	<div id="tous_messages">
+		<INCLURE{fond=noisettes/contenu/contenu_auteur,id=#EVAL{_OCTOPOUCE_AUTEUR},variante=only,pagination=1,env}/>
+	</div>
 </div>
+
+<BOUCLE_loin(ARTICLES){id_rubrique=1}{par num titre}{n-1,1}>
+<h3 class="divider ouestgo">#TITRE</h3>
+<div class="container">
+	<div class="articles grid-2 ouestgo">
+		[<div class="chapo">(#CHAPO)</div>]
+		[<a href="https://www.ouestgo.fr/communaute/472">(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{543})</a>]
+	</div>
+</div>
+</BOUCLE_loin>
 
 <BOUCLE_autres(ARTICLES){page=autres}>
 <h3 class="divider">#TITRE</h3>
