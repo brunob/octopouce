@@ -1,14 +1,7 @@
 <div class="footer">
 	<div class="container">
-		<B_menus>
-		<ul class="grid has-gutter">
-			<BOUCLE_menus(MENUS){identifiant==^pied_}{par identifiant}>
-			<li>
-				<h2>#TITRE</h2>
-				[(#INCLURE{fond=inclure/menu,id_menu})]
-				</BOUCLE_menus>
-			</li>
-		</ul>
-		</B_menus>
+	<BOUCLE_menus(MENUS){identifiant=pied}>
+	[(#INCLURE{fond=inclure/menu,id_menu})]
+	</BOUCLE_menus>
 	</div>
 </div>

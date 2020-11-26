@@ -29,11 +29,9 @@ nav#entete .recherche { float: left; }
 #droite .actions { margin: 2em 0; text-align: center; }
 #droite h3 { color: #999; }
 
-.footer { margin-top: 2em; padding: 2em 0; background: #f2f2f2; }
-.footer .container .grid { margin: 0 auto; text-align: center; }
-.footer .grid > li { text-align: left; }
-.footer .grid li h2 { margin-bottom: 1em; color: #fc3f93; font-size: 1.2em; font-family: fonarto; font-weight: normal; }
-.footer .menu-items .item + .item { margin-top: 0.25em; }
+.footer { margin-top: 2em; padding: 2em 0; background: #f2f2f2; text-align: center; }
+.footer .menu-items .item { display: inline-block; }
+.footer .menu-items .item + .item { margin-left: 0.5em; }
 .footer .menu-items .item,
 .footer .menu-items .item a { color: #333; text-decoration: none; font-family: abel; }
 
