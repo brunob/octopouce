@@ -5,45 +5,8 @@
 		<a href="#URL_SITE_SPIP/"><img src="[(#CHEMIN{rien.gif})]" alt="Seenthis"></a>
 	</div>
 
-	<BOUCLE_auteur(AUTEURS){tout}{id_auteur=#SESSION{id_auteur}|sinon{0}}>
-		<div class="liens logout">
-			<a href="#URL_LOGOUT" class="symbole">
-				<img src="[(#CHEMIN{imgs/quit.png})]" alt="Quit">
-			</a>
-			<a href="#URL_LOGOUT" class="intitule"></a>
-		</div>
-		<div class="liens profile">
-			<a href="#URL_PAGE{profil}" class="symbole">
-				<img src="[(#CHEMIN{imgs/profil.png})]" alt="Prefs">
-			</a>
-			<a href="#URL_PAGE{profil}" class="intitule"></a>
-		</div>
-		<div class="liens perso">
-			<a href="#URL_AUTEUR">
-				[(#ID_AUTEUR|microcache{noisettes/logo_auteur/image_logo_auteur_small})]
-				<span class="nom_auteur">#LOGIN</span>
-			</a>
-		</div>
-		<div class="liens people">
-			<a href="poulpes" class="symbole">
-				<img src="[(#CHEMIN{imgs/people.png})]" alt="People">
-			</a>
-			<a href="poulpes" class="intitule"></a>
-		</div>
-		<div class="liens tags">
-			<a href="tags" class="symbole">
-				<img src="[(#CHEMIN{imgs/themes.png})]" alt="Tags">
-			</a>
-			<a href="tags" class="intitule"></a>
-		</div>
-		<div class="liens recherche">
-			<a href="recherche" class="symbole">
-				<img src="[(#CHEMIN{imgs/rechercher.png})]" alt="Rechercher">
-			</a>
-			<a href="recherche" class="intitule">rechercher</a>
-		</div>
-	</BOUCLE_auteur>
-		<div id="interface_connexion"><INCLURE{fond=pave_connexion}{lang=fr}{env}></div>
-	<//B_auteur>
+	<div class="liens logout">
+		<a href="http://forge.octopouce.net/" target="_blank" rel="external noopener noreferrer"><:octopouce:titre_menu_qui:></a>
+	</div>
 
 </nav>

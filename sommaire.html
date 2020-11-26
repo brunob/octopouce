@@ -9,13 +9,7 @@
 
 	[<link rel="stylesheet" href="(#URL_PAGE{couleur,couleur=#COULEUR})" type="text/css" media="all">][
 	(#SESSION{id_auteur}|non)
-	[<link rel="stylesheet" href="(#URL_PAGE{inscription,couleur=#COULEUR})" type="text/css" media="all">]
-	<style><!--
-	#charger_pave_inscription {
-		display: none;
-		text-align: left;
-	}
-	--></style>]
+	[<link rel="stylesheet" href="(#URL_PAGE{inscription,couleur=#COULEUR})" type="text/css" media="all">]]
 
 	<INCLURE{fond=inc/head_session}>
 
@@ -35,18 +29,15 @@
 </BOUCLE_intro>
 
 <div class="container raisons">
-	<div class="articles grid-2">
-		<BOUCLE_raisons(ARTICLES){id_rubrique=1}{par num titre}{1,n-3}>
+	<BOUCLE_raisons(ARTICLES){id_rubrique=1}{par num titre}{1,n-2}>
+	<div class="articles grid-2-small-1[(#COMPTEUR_BOUCLE|alterner{--reverse,''})]">
 		[(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{543})]
-		[<div class="chapo">(#CHAPO)</div>]
-		<h2[(#LOGO_ARTICLE|non) class="invert"]><a href="#URL_ARTICLE">#TITRE</a></h2>
-		</BOUCLE_raisons>
-		<BOUCLE_raisons2(ARTICLES){id_rubrique=1}{par num titre}{n-2,1}>
-		<h2><a href="#URL_ARTICLE">#TITRE</a></h2>
-		[<div class="chapo">(#CHAPO)</div>]
-		[(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{543})]
-		</BOUCLE_raisons2>
+		[<div class="chapo">
+			(#CHAPO)
+			<p class="lien_suite"><a href="#URL_ARTICLE">#TITRE</a></p>
+		</div>]
 	</div>
+	</BOUCLE_raisons>
 </div>
 
 <h3 class="divider"><:octopouce:titre_home_live:></h3>
@@ -54,6 +45,7 @@
 	<div id="tous_messages">
 		<INCLURE{fond=noisettes/contenu/contenu_auteur,id=#EVAL{_OCTOPOUCE_AUTEUR},variante=only,pagination=1,env}/>
 	</div>
+	<h3 class="fb"><a href="https://www.facebook.com/octopouce.net/" target="_blank" rel="external noopener noreferrer"><:octopouce:titre_home_fb:></a></h3>
 </div>
 
 <BOUCLE_loin(ARTICLES){id_rubrique=1}{par num titre}{n-1,1}>
@@ -61,7 +53,7 @@
 <div class="container">
 	<div class="articles grid-2 ouestgo">
 		[<div class="chapo">(#CHAPO)</div>]
-		[<a href="https://www.ouestgo.fr/communaute/472" target="_blanck" rel="external noopener noreferrer">(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{543})</a>]
+		[<a href="https://www.ouestgo.fr/communaute/472" target="_blank" rel="external noopener noreferrer">(#LOGO_ARTICLE|image_recadre{1:1,-,focus}|image_reduire{543})</a>]
 	</div>
 </div>
 </BOUCLE_loin>

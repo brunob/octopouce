@@ -49,7 +49,7 @@ nav#entete .recherche { float: left; }
 .accueil h1 { font-size: 4.5em; }
 .accueil h2 { font-size: 2.5em; }
 .accueil .chapo { font-size: 1.25em; line-height: 1.5; }
-.accueil .intro { padding: 35px 0 0; text-align: left; background: #fc3f93; color: #fff; }
+.accueil .intro { padding: 35px 1em 0; text-align: left; background: #fc3f93; color: #fff; }
 .accueil .intro .container { padding: 2em 0; background: transparent url(img/poulpe.png) right -15px no-repeat; }
 .accueil .intro h2 { font-size: 1.5em; font-family: inherit; margin-bottom: 1em; }
 .accueil .intro .chapo {font-weight: bold; }
@@ -61,10 +61,17 @@ nav#entete .recherche { float: left; }
 .accueil .articles h2.invert a { color: #fff; }
 .accueil .articles h2.invert a:hover { color: initial; }
 .accueil .articles .chapo { padding: 2em; font-size: 1.5em; }
+.accueil .articles .chapo h3.spip { margin-bottom: 1em; }
+.accueil .articles .chapo .lien_suite { margin-top: 1em; font-size: 0.9em; }
+.accueil .articles .chapo .lien_suite a { text-decoration: none; }
 .accueil .divider { padding: 0.5em 0; text-align: center; background: #fc3f93; color: #fff; font-family: inherit; font-size: 2em; font-weight: bold; }
 .accueil #tous_messages { max-width: 660px; margin: 0 auto; }
+.accueil .fb { text-align: center; margin: 1em 0 2em; font-size: 1.5em;}
+.accueil .fb a { text-decoration:  none; color: initial; }
 .accueil .ouestgo { background-color: #304a9a; color: #fff; }
 .accueil .ouestgo .chapo { background: #304a9a url(img/bg_ouestgo.png) 90% 95% no-repeat; }
+.accueil .ouestgo > a,
+.accueil .ouestgo > a img { display: block; }
 .accueil .logos { text-align: center; padding: 3em 0; }
 .accueil .logos img { margin: 0 1em; }
 .accueil .logos a { text-decoration: none; }
