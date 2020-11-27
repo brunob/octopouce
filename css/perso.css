@@ -69,7 +69,8 @@ nav#entete .recherche { float: left; }
 .accueil .fb { text-align: center; margin: 1em 0 2em; font-size: 1.5em;}
 .accueil .fb a { text-decoration:  none; color: initial; }
 .accueil .ouestgo { background-color: #304a9a; color: #fff; }
-.accueil .ouestgo .chapo { background: #304a9a url(img/bg_ouestgo.png) 90% 95% no-repeat; }
+.accueil .ouestgo .chapo { background: transparent url(img/bg_ouestgo.png) 90% 95% no-repeat; }
+.accueil .ouestgo.articles { background: linear-gradient(to left, #fff, #fff 10%, #304a9a 20%); }
 .accueil .ouestgo > a,
 .accueil .ouestgo > a img { display: block; }
 .accueil .logos { text-align: center; padding: 3em 0; }
