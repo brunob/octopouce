@@ -60,11 +60,12 @@ nav#entete .recherche { float: left; }
 .accueil .articles h2.invert { background-color: #fc3f93; }
 .accueil .articles h2.invert a { color: #fff; }
 .accueil .articles h2.invert a:hover { color: initial; }
-.accueil .articles .chapo { padding: 2em; font-size: 1.5em; }
+.accueil .articles .chapo { padding: 2em; }
 .accueil .articles .chapo h3.spip { margin-bottom: 1em; }
 .accueil .articles .chapo .lien_suite { margin-top: 1em; font-size: 0.9em; }
 .accueil .articles .chapo .lien_suite a { text-decoration: none; }
 .accueil .divider { padding: 0.5em 0; text-align: center; background: #fc3f93; color: #fff; font-family: inherit; font-size: 2em; font-weight: bold; }
+.accueil .divider.raisons { background: #292929; }
 .accueil #tous_messages { max-width: 660px; margin: 0 auto; }
 .accueil .fb { text-align: center; margin: 1em 0 2em; font-size: 1.5em;}
 .accueil .fb a { text-decoration:  none; color: initial; }
